@@ -40,15 +40,13 @@ def chatbot_response():
 
     for sentence in sentences:
         if sentence.startswith("Je m'appelle"):
-            name = sentence[11:]
+            name = sentence[11:].strip()
             ints = predict_class(sentence, model)
-            res1 = getResponse(ints, intents)
-            res = res1.replace("{n}", name)
+            res = getResponse(ints, intents, name)
         elif sentence.startswith("Bonjour, je m'appelle"):
-            name = sentence[14:]
+            name = sentence[20:].strip()
             ints = predict_class(sentence, model)
-            res1 = getResponse(ints, intents)
-            res = res1.replace("{n}", name)
+            res = getResponse(ints, intents, name)
         else:
             ints = predict_class(sentence, model)
             res = getResponse(ints, intents)
@@ -92,12 +90,14 @@ def predict_class(sentence, model):
         return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
     return return_list
 
-def getResponse(ints, intents_json):
+def getResponse(ints, intents_json, name=None):
     tag = ints[0]["intent"]
     list_of_intents = intents_json["intents"]
     for i in list_of_intents:
         if i["tag"] == tag:
             result = random.choice(i["responses"])
+            if name:
+                result = result.replace("{n}", name)
             break
     return result
 

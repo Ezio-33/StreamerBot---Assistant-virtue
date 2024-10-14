@@ -8,14 +8,16 @@ from flask_ngrok import run_with_ngrok
 import nltk
 from keras.models import load_model
 from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import sent_tokenize
+
 lemmatizer = WordNetLemmatizer()
+nltk.download('punkt')
 
 # initialisation du chat
-model = load_model("/root/chatbot-V2/AI-Chatbot/chatbot_model.h5")
-# intents = json.loads(open("intents.json").read())
-data_file = open("/root/chatbot-V2/AI-Chatbot/intents.json").read()
-words = pickle.load(open("/root/chatbot-V2/AI-Chatbot/words.pkl", "rb"))
-classes = pickle.load(open("/root/chatbot-V2/AI-Chatbot/classes.pkl", "rb"))
+model = load_model("/root/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard/chatbot_model.h5")
+data_file = open("/root/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard/intents.json").read()
+words = pickle.load(open("/root/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard/words.pkl", "rb"))
+classes = pickle.load(open("/root/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard/classes.pkl", "rb"))
 
 app = Flask(__name__)
 # run_with_ngrok(app)
@@ -24,30 +26,37 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-
 @app.route("/get", methods=["POST"])
 def chatbot_response():
     msg = request.form["msg"]
 
     # Charger et traiter le fichier JSON des intentions
-    data_file = open("/root/chatbot-V2/AI-Chatbot/intents.json").read()
+    data_file = open("/root/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard/intents.json").read()
     intents = json.loads(data_file)
 
+    # Segmenter le message en phrases distinctes
+    sentences = sent_tokenize(msg)
+    responses = []
 
-    if msg.startswith("Je m'appelle"):
-        name = msg[11:]
-        ints = predict_class(msg, model)
-        res1 = getResponse(ints, intents)
-        res = res1.replace("{n}", name)
-    elif msg.startswith("Bonjour, je m'appelle"):
-        name = msg[14:]
-        ints = predict_class(msg, model)
-        res1 = getResponse(ints, intents)
-        res = res1.replace("{n}", name)
-    else:
-        ints = predict_class(msg, model)
-        res = getResponse(ints, intents)
-    return res
+    for sentence in sentences:
+        if sentence.startswith("Je m'appelle"):
+            name = sentence[11:]
+            ints = predict_class(sentence, model)
+            res1 = getResponse(ints, intents)
+            res = res1.replace("{n}", name)
+        elif sentence.startswith("Bonjour, je m'appelle"):
+            name = sentence[14:]
+            ints = predict_class(sentence, model)
+            res1 = getResponse(ints, intents)
+            res = res1.replace("{n}", name)
+        else:
+            ints = predict_class(sentence, model)
+            res = getResponse(ints, intents)
+        responses.append(res)
+
+    # Combiner les réponses pour chaque phrase en une seule réponse
+    final_response = " ".join(responses)
+    return final_response
 
 # fonctionnalités du chat
 def clean_up_sentence(sentence):

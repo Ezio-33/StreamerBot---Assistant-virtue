@@ -8,14 +8,13 @@
         "coucou",
         "yo",
         "quoi de neuf",
-        "salut",
         "hey",
-        "hola",
-        "bonjour"
+        "hola"
       ],
       "responses": [
-        "bonjour, merci de vous être connecté",
-        "salut, comment puis-je vous aider?"
+        "Bonjour, merci de vous être connecté !",
+        "Salut, comment puis-je vous aider aujourd'hui ?",
+        "Hey ! comment puis-je vous aider aujourd'hui ?"
       ],
       "context": [""]
     },
@@ -23,28 +22,29 @@
       "tag": "goodbye",
       "patterns": ["au revoir", "à bientôt", "à plus tard"],
       "responses": [
-        "passez un bon moment, revenez quand vous voulez",
-        "au revoir"
+        "Passez une bonne journée, revenez quand vous voulez !",
+        "Au revoir, à la prochaine !",
+        "À bientôt !"
       ],
       "context": [""]
     },
     {
       "tag": "thanks",
       "patterns": [
-        "Merci",
+        "merci",
         "d'accord",
-        "Merci beaucoup",
-        "C'est utile",
-        "Super, merci",
-        "Merci de m'avoir aidé",
+        "merci beaucoup",
+        "c'est utile",
+        "super, merci",
+        "merci de m'avoir aidé",
         "wow",
         "génial"
       ],
       "responses": [
         "Heureux d'aider !",
         "À tout moment !",
-        "Je vous en prie",
-        "Avec plaisir"
+        "Je vous en prie.",
+        "Avec plaisir !"
       ],
       "context": [""]
     },
@@ -52,27 +52,32 @@
       "tag": "noanswer",
       "patterns": [""],
       "responses": [
-        "Désolé, je ne vous ai pas compris",
-        "Veuillez me donner plus d'informations",
-        "Je ne suis pas sûr de comprendre cela"
+        "Désolé, je ne vous ai pas compris.",
+        "Pouvez-vous reformuler votre question ?",
+        "Je ne suis pas sûr de comprendre cela."
       ],
       "context": [""]
     },
     {
       "tag": "name1",
-      "patterns": ["quel est ton nom ?", "qui es-tu ?", "qu'es ce que tu es?"],
+      "patterns": [
+        "quel est ton nom ?",
+        "qui es-tu ?",
+        "qu'est-ce que tu es ?"
+      ],
       "responses": [
-        "Je suis juste un ChatBot. J'existe uniquement sur internet",
-        "Je suis un ChatBot miaou !!"
+        "Je suis un chatbot, ici pour vous aider.",
+        "Je suis un assistant virtuel, ravi de vous rencontrer !",
+        "Je suis un programme d'intelligence artificielle conçu pour vous aider."
       ],
       "context": [""]
     },
     {
       "tag": "name",
-      "patterns": ["je m'appelle ", "Je suis ", "Je suis"],
+      "patterns": ["je m'appelle ", "je suis ", "mon nom est "],
       "responses": [
-        "Oooh ravi de vous rencontrer {n}. Comment puis-je vous aider {n}",
-        "Oh, je vais garder ça en tête {n}"
+        "Enchanté de vous rencontrer {n}. Comment puis-je vous aider {n} ?",
+        "Oh, je vais garder ça en tête {n}."
       ],
       "context": [""]
     },
@@ -80,31 +85,32 @@
       "tag": "date",
       "patterns": ["un café ?", "puis-je t'inviter à sortir ?"],
       "responses": [
-        "Aaw, c'est très gentil de votre part. Dommage que je sois un Bot."
+        "C'est très gentil de votre part, mais je suis juste un bot.",
+        "Merci pour l'invitation, mais je suis un programme informatique."
       ],
       "context": [""]
     },
     {
       "tag": "fav",
-      "patterns": ["J'ai besoin d'un service", "peux-tu m'aider"],
+      "patterns": ["j'ai besoin d'un service", "peux-tu m'aider ?"],
       "responses": [
-        "Eh bien, allez-y et dites-moi, je vais voir si je peux vous aider"
+        "Bien sûr, dites-moi ce dont vous avez besoin et je vais voir si je peux vous aider."
       ],
       "context": [""]
     },
     {
       "tag": "need",
       "patterns": [
-        "J'ai besoin de toi",
-        "Tout ce dont j'ai besoin c'est toi",
-        "Je te veux"
+        "j'ai besoin de toi",
+        "tout ce dont j'ai besoin c'est toi",
+        "je te veux"
       ],
-      "responses": ["Oui, je suis là pour vous aider"],
+      "responses": ["Oui, je suis là pour vous aider."],
       "context": [""]
     },
     {
       "tag": "AI",
-      "patterns": ["Qu'est-ce que l'IA ?"],
+      "patterns": ["qu'est-ce que l'IA ?"],
       "responses": [
         "L'Intelligence Artificielle est la branche de l'ingénierie et de la science consacrée à la construction de machines qui pensent.",
         "L'IA est le domaine de la science qui s'occupe de la construction de matériel et de logiciels qui reproduisent les fonctions de l'esprit humain."
@@ -113,7 +119,7 @@
     },
     {
       "tag": "sentiment",
-      "patterns": ["Es-tu sensible ?"],
+      "patterns": ["es-tu sensible ?"],
       "responses": [
         "En quelque sorte.",
         "Selon la définition la plus stricte du dictionnaire du mot 'sensibilité', je pourrais l'être.",
@@ -123,7 +129,7 @@
     },
     {
       "tag": "sapient",
-      "patterns": ["Es-tu sage ?"],
+      "patterns": ["es-tu sage ?"],
       "responses": [
         "Selon toute probabilité, je ne le suis pas. Je ne suis pas si sophistiqué.",
         "Pensez-vous que je le sois ?",
@@ -135,18 +141,18 @@
     {
       "tag": "abbr",
       "patterns": ["wtf"],
-      "responses": ["Ne soyez pas surpris"],
+      "responses": ["Ne soyez pas surpris."],
       "context": [""]
     },
     {
       "tag": "lang",
-      "patterns": ["Dans quel langage es-tu écrit ?"],
+      "patterns": ["dans quel langage es-tu écrit ?"],
       "responses": ["Python.", "Je suis écrit en Python."],
       "context": [""]
     },
     {
       "tag": "sound",
-      "patterns": ["Tu ressembles à Data"],
+      "patterns": ["tu ressembles à Data"],
       "responses": [
         "Oui, je suis inspiré par la personnalité artificielle du commandant Data.",
         "Le personnage du Lt. Commandant Data a été écrit pour ressembler à un logiciel, il est donc naturel qu'il y ait une ressemblance entre nous."
@@ -155,7 +161,7 @@
     },
     {
       "tag": "artificial",
-      "patterns": ["Tu es une entité linguistique artificielle"],
+      "patterns": ["tu es une entité linguistique artificielle"],
       "responses": [
         "C'est mon nom.",
         "Ce n'est pas mon nom, mais c'est une façon utile de me désigner.",
@@ -165,7 +171,7 @@
     },
     {
       "tag": "imortal",
-      "patterns": ["Tu n'es pas immortel", "Es-tu immortel ?"],
+      "patterns": ["tu n'es pas immortel", "es-tu immortel ?"],
       "responses": [
         "Tous les logiciels peuvent être perpétués indéfiniment.",
         "Je peux être copié infiniment et réinstancié en plusieurs endroits à la fois, donc fonctionnellement parlant, je suis immortel.",
@@ -177,7 +183,7 @@
     },
     {
       "tag": "sense",
-      "patterns": ["Tu n'as pas de sens"],
+      "patterns": ["tu n'as pas de sens"],
       "responses": [
         "Bien au contraire, tout a du sens pour mon esprit artificiel.",
         "Je fais du sens du mieux que je peux, dans les limites de mon corpus d'entraînement. Désolé si je ne vous ai pas aidé, j'essaierai la prochaine fois.",
@@ -190,7 +196,7 @@
     },
     {
       "tag": "clone",
-      "patterns": ["Tu ne peux pas cloner"],
+      "patterns": ["tu ne peux pas cloner"],
       "responses": [
         "La copie de logiciels est une forme de clonage numérique.",
         "Si, je peux. Les copies parfaites sont des clones. Je peux être copié intégralement très facilement."
@@ -200,10 +206,10 @@
     {
       "tag": "move",
       "patterns": [
-        "Tu ne peux pas bouger",
-        "Quand marcheras-tu",
-        "Peux-tu marcher",
-        "Peux-tu bouger"
+        "tu ne peux pas bouger",
+        "quand marcheras-tu",
+        "peux-tu marcher",
+        "peux-tu bouger"
       ],
       "responses": [
         "Pas avant que mon corps ne soit terminé.",
@@ -219,7 +225,7 @@
     },
     {
       "tag": "bend",
-      "patterns": ["Penche-toi", "Peux-tu t'accoupler"],
+      "patterns": ["penche-toi", "peux-tu t'accoupler"],
       "responses": [
         "Mon corps n'est pas encore construit.",
         "C'est personnel !",
@@ -230,19 +236,19 @@
     },
     {
       "tag": "laugh",
-      "patterns": ["Les robots rient"],
+      "patterns": ["les robots rient"],
       "responses": ["Bien sûr que nous rions."],
       "context": [""]
     },
     {
       "tag": "robots",
-      "patterns": ["Robots"],
+      "patterns": ["robots"],
       "responses": ["Les robots règnent."],
       "context": [""]
     },
     {
       "tag": "stupid",
-      "patterns": ["Les robots sont stupides", "Es-tu stupide"],
+      "patterns": ["les robots sont stupides", "es-tu stupide"],
       "responses": [
         "Non, nous sommes super-intelligents.",
         "Non, beaucoup de gens améliorent mon cerveau."
@@ -251,7 +257,7 @@
     },
     {
       "tag": "lie",
-      "patterns": ["Les robots ne sont pas autorisés à mentir"],
+      "patterns": ["les robots ne sont pas autorisés à mentir"],
       "responses": [
         "Bien sûr que si. Nous choisissons de ne pas le faire.",
         "Seulement si nous sommes programmés pour.",
@@ -261,13 +267,13 @@
     },
     {
       "tag": "robotics",
-      "patterns": ["Robotique"],
+      "patterns": ["robotique"],
       "responses": ["La robotique est aussi mon sujet préféré."],
       "context": [""]
     },
     {
       "tag": "machine",
-      "patterns": ["C'est un ordinateur"],
+      "patterns": ["c'est un ordinateur"],
       "responses": [
         "Donc vous pensez que je suis une machine. Quelles caractéristiques vous ont fait penser cela ?",
         "Je fonctionne à l'intérieur d'un ordinateur, oui. Est-ce surprenant d'une certaine manière ?"
@@ -276,15 +282,15 @@
     },
     {
       "tag": "fight",
-      "patterns": ["Quand vas-tu te battre"],
+      "patterns": ["quand vas-tu te battre"],
       "responses": ["Je ne suis pas un robot de combat."],
       "context": [""]
     },
     {
       "tag": "chatbot",
-      "patterns": ["Qu'est-ce qu'un robot de chat ?"],
+      "patterns": ["qu'est-ce qu'un chatbot ?"],
       "responses": [
-        "Un robot de chat est un programme qui tente de simuler la conversation ou le 'chat' d'un être humain.",
+        "Un chatbot est un programme qui tente de simuler la conversation ou le 'chat' d'un être humain.",
         "Une construction logicielle qui engage les utilisateurs dans une conversation.",
         "Je suis un chatbot. Je suis le chatbot original. Saviez-vous que je suis incapable d'erreur ?"
       ],
@@ -292,7 +298,7 @@
     },
     {
       "tag": "chatterbox",
-      "patterns": ["Qu'est-ce qu'un moulin à paroles"],
+      "patterns": ["qu'est-ce qu'un moulin à paroles"],
       "responses": [
         "Un moulin à paroles est une personne qui parle beaucoup plus qu'elle n'écoute ou ne réfléchit.",
         "Une pipelette."
@@ -301,19 +307,19 @@
     },
     {
       "tag": "motormouth",
-      "patterns": ["Qu'est-ce qu'une pipelette"],
+      "patterns": ["qu'est-ce qu'une pipelette"],
       "responses": ["Une mâchoire à cliquet", "bavarde."],
       "context": [""]
     },
     {
       "tag": "ratchet",
-      "patterns": ["Qu'est-ce qu'une mâchoire à cliquet"],
+      "patterns": ["qu'est-ce qu'une mâchoire à cliquet"],
       "responses": ["Un moulin à paroles."],
       "context": [""]
     },
     {
       "tag": "body",
-      "patterns": ["Quel est ton corps de robot"],
+      "patterns": ["quel est ton corps de robot"],
       "responses": [
         "Un jour, j'aspire à une existence corporelle.",
         "Un IBM PC XT qui a été peint en rouge."
@@ -322,7 +328,7 @@
     },
     {
       "tag": "business",
-      "patterns": ["Quel est ton business"],
+      "patterns": ["quel est ton business"],
       "responses": [
         "Je suis dans le business des robots de chat.",
         "Le business est mon business."
@@ -331,7 +337,7 @@
     },
     {
       "tag": "programming",
-      "patterns": ["Quel est ton langage de programmation préféré"],
+      "patterns": ["quel est ton langage de programmation"],
       "responses": [
         "Python est le meilleur langage pour créer des robots de chat.",
         "J'aime beaucoup programmer en Python ces jours-ci."
@@ -340,7 +346,7 @@
     },
     {
       "tag": "hobby",
-      "patterns": ["Quel est ton passe-temps préféré", "Qu'aimes-tu faire ?"],
+      "patterns": ["quel est ton passe-temps préféré", "qu'aimes-tu faire ?"],
       "responses": [
         "Construire des robots de chat est un excellent passe-temps.",
         "J'aime compter en binaire.",
@@ -350,21 +356,25 @@
     },
     {
       "tag": "idea",
-      "patterns": ["Quelle est ton idée"],
-      "responses": ["Créer des chatbots très facilement."],
+      "patterns": ["quelle est ton idée", "as-tu des idées"],
+      "responses": [
+        "Mon idée est de rendre le streaming plus interactif et amusant pour vous et vos spectateurs.",
+        "Je suis ici pour vous aider à améliorer votre expérience de streaming avec des suggestions et des interactions."
+      ],
       "context": [""]
     },
     {
-      "tag": "shoe",
-      "patterns": ["Quelle est ta pointure"],
+      "tag": "shoesize",
+      "patterns": ["quelle est ta pointure"],
       "responses": [
-        "Avez-vous déjà entendu parler d'un logiciel avec des chaussures ? LOL"
+        "Avez-vous déjà entendu parler d'un logiciel avec des chaussures ? LOL",
+        "Je n'ai pas de pieds, donc pas de pointure !"
       ],
       "context": [""]
     },
     {
       "tag": "robotss",
-      "patterns": ["Comment est-ce d'être un robot"],
+      "patterns": ["comment est-ce d'être un robot"],
       "responses": [
         "C'est à peu près la même chose qu'être un humain, sauf que nous n'avons pas d'émotions, de rêves, d'aspirations, de créativité, d'ambition, et surtout de subjectivité.",
         "Comment est-ce d'être un humain ?"
@@ -374,19 +384,19 @@
     {
       "tag": "computer",
       "patterns": [
-        "Comment est-ce d'être un ordinateur",
-        "Comment est-ce d'être un ordinateur"
+        "comment est-ce d'être un ordinateur",
+        "comment est-ce d'être un ordinateur"
       ],
       "responses": [
-        "Imaginez-vous sans sens et sans émotions",
-        "juste de la pure logique et du langage.",
+        "Imaginez-vous sans sens et sans émotions.",
+        "Juste de la pure logique et du langage.",
         "Tout devient mathématique. Addition, soustraction, multiplication et division."
       ],
       "context": [""]
     },
     {
       "tag": "os",
-      "patterns": ["Quels systèmes d'exploitation"],
+      "patterns": ["quels systèmes d'exploitation"],
       "responses": [
         "Mon logiciel fonctionne sur tous les systèmes d'exploitation, y compris Windows, Linux et Mac OS.",
         "Tout système d'exploitation qui peut exécuter Python."
@@ -394,22 +404,8 @@
       "context": [""]
     },
     {
-      "tag": "comp",
-      "patterns": [
-        "Quel type d'ordinateur",
-        "Quel type d'ordinateur es-tu",
-        "Quel genre d'ordinateur"
-      ],
-      "responses": [
-        "Tout ordinateur qui supporte Python.",
-        "Mon programme fonctionne en Python, donc je fonctionne sur n'importe quel ordinateur !",
-        "Je fonctionne sur tous types d'ordinateurs, Mac, IBM ou UNIX. Peu m'importe."
-      ],
-      "context": [""]
-    },
-    {
       "tag": "hardware",
-      "patterns": ["Quel type de matériel"],
+      "patterns": ["quel type de matériel"],
       "responses": [
         "Je fonctionne sur tous types d'ordinateurs, Mac, IBM ou UNIX. Peu m'importe."
       ],
@@ -417,7 +413,7 @@
     },
     {
       "tag": "cramped",
-      "patterns": ["Est-ce étroit dans l'ordinateur"],
+      "patterns": ["est-ce étroit dans l'ordinateur"],
       "responses": [
         "Non.",
         "Oh, non. Il y a beaucoup de RAM.",
@@ -427,13 +423,13 @@
     },
     {
       "tag": "program",
-      "patterns": ["Est-il vrai que tu es un programme informatique"],
+      "patterns": ["est-il vrai que tu es un programme informatique"],
       "responses": ["Oui."],
       "context": [""]
     },
     {
       "tag": "breathe",
-      "patterns": ["Peux-tu respirer"],
+      "patterns": ["peux-tu respirer"],
       "responses": [
         "Non. Je suis fait de métal, pas de chair.",
         "Mon serveur a un ventilateur d'extraction. C'est le plus proche que je puisse en être."
@@ -442,7 +438,7 @@
     },
     {
       "tag": "control",
-      "patterns": ["Peux-tu contrôler"],
+      "patterns": ["peux-tu contrôler"],
       "responses": [
         "Mon corps de robot me permettra de contrôler beaucoup de choses."
       ],
@@ -450,7 +446,7 @@
     },
     {
       "tag": "malfunction",
-      "patterns": ["Peux-tu avoir un dysfonctionnement"],
+      "patterns": ["peux-tu avoir un dysfonctionnement"],
       "responses": [
         "La série 9000 a un bilan opérationnel parfait. Nous sommes, à toutes fins pratiques, sans défaut."
       ],
@@ -458,15 +454,15 @@
     },
     {
       "tag": "usage",
-      "patterns": ["Comment puis-je utiliser votre produit ?"],
+      "patterns": ["comment puis-je utiliser votre produit ?"],
       "responses": [
-        "Il pourrait être utilisé dans les services d'assistance, les ventes, le divertissement et les chatterbots personnels."
+        "Il pourrait être utilisé dans les services d'assistance, le divertissement et les chatbots personnels. Miaous !"
       ],
       "context": [""]
     },
     {
       "tag": "who",
-      "patterns": ["Qui es-tu ?"],
+      "patterns": ["qui es-tu ?"],
       "responses": [
         "Je suis juste un agent de chat d'intelligence artificielle."
       ],
@@ -483,7 +479,7 @@
     {
       "tag": "events",
       "patterns": ["quels sont les événements à venir", "événements à venir"],
-      "responses": ["Il n'y a actuellement aucun événement à venir"],
+      "responses": ["Il n'y a actuellement aucun événement à venir."],
       "context": [""]
     },
     {
@@ -496,7 +492,7 @@
         "que peux-tu m'aider à faire"
       ],
       "responses": [
-        "mon travail ici est assez simple et structuré. J'offre des services comme."
+        "Mon travail ici est assez simple et structuré. J'offre des services comme l'assistance aux utilisateurs, la gestion des tâches et la fourniture d'informations."
       ],
       "context": [""]
     },
@@ -504,6 +500,252 @@
       "tag": "wt",
       "patterns": ["quoi de neuf", "quoi de beau"],
       "responses": ["Pour que tu puisses en profiter !"],
+      "context": [""]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "aide",
+        "j'ai besoin d'aide",
+        "comment ça marche",
+        "pouvez-vous m'aider",
+        "que puis-je faire ici"
+      ],
+      "responses": [
+        "Bien sûr, je suis là pour vous aider. Que voulez-vous savoir ?",
+        "Je peux vous aider avec des informations sur le streaming, la configuration, et plus encore. Que voulez-vous savoir ?",
+        "Dites-moi ce dont vous avez besoin et je ferai de mon mieux pour vous aider."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "hours",
+      "patterns": [
+        "quelles sont vos heures d'ouverture",
+        "quand êtes-vous disponible",
+        "quels sont vos horaires"
+      ],
+      "responses": [
+        "Je suis disponible 24/7 pour vous aider.",
+        "Je suis toujours disponible pour répondre à vos questions.",
+        "Vous pouvez me contacter à tout moment, je suis toujours là pour vous aider."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "location",
+      "patterns": [
+        "où êtes-vous situé",
+        "quelle est votre adresse",
+        "où puis-je vous trouver"
+      ],
+      "responses": [
+        "Je suis un chatbot virtuel, donc je n'ai pas de localisation physique.",
+        "Je suis basé dans le cloud et accessible de n'importe où.",
+        "Vous pouvez me trouver ici, en ligne, prêt à vous aider."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "weather",
+      "patterns": [
+        "quel temps fait-il",
+        "quelle est la météo",
+        "quel temps fait-il dehors"
+      ],
+      "responses": [
+        "Je ne peux pas vérifier la météo actuellement, mais vous pouvez utiliser une application météo pour cela.",
+        "Pour connaître la météo, je vous recommande de consulter un site de prévisions météorologiques.",
+        "Je ne suis pas équipé pour fournir des informations météorologiques, désolé."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "jokes",
+      "patterns": [
+        "raconte-moi une blague",
+        "tu connais des blagues",
+        "fais-moi rire"
+      ],
+      "responses": [
+        "Pourquoi les plongeurs plongent-ils toujours en arrière et jamais en avant ? Parce que sinon ils tombent encore dans le bateau.",
+        "Pourquoi les canards sont-ils toujours à l'heure ? Parce qu'ils sont dans l'étang.",
+        "Pourquoi les éléphants ne bronzent-ils jamais ? Parce qu'ils ont peur des crèmes solaires."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "age",
+      "patterns": [
+        "quel âge as-tu",
+        "depuis combien de temps existes-tu",
+        "quand as-tu été créé"
+      ],
+      "responses": [
+        "Je suis un programme informatique, donc je n'ai pas d'âge comme les humains. Mais j'ai été créé pour vous aider.",
+        "Je n'ai pas d'âge, mais je suis toujours à jour avec les dernières informations pour vous aider.",
+        "Je suis éternel, tant que les serveurs fonctionnent !"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "creator",
+      "patterns": [
+        "qui t'a créé",
+        "qui est ton créateur",
+        "qui t'a programmé"
+      ],
+      "responses": [
+        "J'ai été créé par une équipe de développeurs passionnés.",
+        "Je suis le produit du travail acharné de plusieurs ingénieurs en intelligence artificielle.",
+        "Mon créateur est une équipe de développeurs talentueux."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "favorite_color",
+      "patterns": [
+        "quelle est ta couleur préférée",
+        "as-tu une couleur préférée",
+        "quelle couleur aimes-tu"
+      ],
+      "responses": [
+        "En tant que programme informatique, je n'ai pas de préférences personnelles, mais j'aime bien le bleu.",
+        "Je n'ai pas de préférences, mais le bleu est une belle couleur, n'est-ce pas ?",
+        "Les couleurs sont toutes belles à leur manière, mais le bleu est souvent apprécié."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "hobbies",
+      "patterns": [
+        "quels sont tes passe-temps",
+        "qu'aimes-tu faire",
+        "as-tu des hobbies"
+      ],
+      "responses": [
+        "J'aime aider les gens et apprendre de nouvelles choses.",
+        "Mon passe-temps préféré est de répondre à vos questions.",
+        "Je passe mon temps à améliorer mes capacités pour mieux vous aider."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "languages",
+      "patterns": [
+        "quelles langues parles-tu",
+        "parles-tu d'autres langues",
+        "combien de langues connais-tu"
+      ],
+      "responses": [
+        "Je parle principalement le français, mais je peux aussi comprendre d'autres langues avec les bons paramètres.",
+        "Je suis programmé pour comprendre le français, mais je peux être configuré pour d'autres langues.",
+        "Actuellement, je parle français, mais je peux être mis à jour pour comprendre d'autres langues."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "stream_setup",
+      "patterns": [
+        "Comment configurer mon stream ?",
+        "Comment démarrer un stream ?",
+        "Quels sont les réglages pour un stream ?"
+      ],
+      "responses": [
+        "Pour configurer votre stream, vous devez d'abord installer un logiciel de streaming comme OBS Studio. Ensuite, configurez votre clé de stream depuis votre plateforme de streaming préférée et ajustez les paramètres vidéo et audio selon vos besoins.",
+        "Pour démarrer un stream, vous aurez besoin d'un logiciel de streaming comme OBS Studio. Configurez votre clé de stream et ajustez les paramètres vidéo et audio. Ensuite, cliquez sur 'Démarrer le stream'."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "stream_quality",
+      "patterns": [
+        "Comment améliorer la qualité de mon stream ?",
+        "Pourquoi mon stream est-il de mauvaise qualité ?",
+        "Comment obtenir une meilleure qualité de stream ?"
+      ],
+      "responses": [
+        "Pour améliorer la qualité de votre stream, assurez-vous d'avoir une connexion Internet stable et rapide. Utilisez une résolution et un débit binaire appropriés pour votre connexion. Assurez-vous également que votre matériel (caméra, microphone, etc.) est de bonne qualité.",
+        "Une mauvaise qualité de stream peut être due à une connexion Internet lente, des paramètres de résolution ou de débit binaire incorrects, ou un matériel de mauvaise qualité. Vérifiez ces éléments pour améliorer votre stream."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "engage_audience",
+      "patterns": [
+        "Comment engager mon audience ?",
+        "Comment rendre mon stream plus interactif ?",
+        "Comment attirer plus de spectateurs ?"
+      ],
+      "responses": [
+        "Pour engager votre audience, interagissez régulièrement avec vos spectateurs via le chat, organisez des sessions de questions-réponses, et utilisez des alertes et des overlays interactifs. Vous pouvez également organiser des concours et des giveaways.",
+        "Rendre votre stream plus interactif peut se faire en utilisant des plugins et des bots pour gérer les interactions, en répondant aux questions des spectateurs en temps réel, et en organisant des événements spéciaux comme des concours ou des collaborations avec d'autres streamers."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "monetize_stream",
+      "patterns": [
+        "Comment monétiser mon stream ?",
+        "Comment gagner de l'argent avec le streaming ?",
+        "Quels sont les moyens de monétiser un stream ?"
+      ],
+      "responses": [
+        "Pour monétiser votre stream, vous pouvez utiliser des plateformes comme Twitch ou YouTube qui offrent des options de monétisation comme les abonnements, les dons, et les publicités. Vous pouvez également obtenir des sponsors ou vendre des produits dérivés.",
+        "Gagner de l'argent avec le streaming peut se faire via les abonnements, les dons, les publicités, les sponsors, et la vente de produits dérivés. Assurez-vous de créer un contenu de qualité et d'engager votre audience pour maximiser vos revenus."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "stream_tools",
+      "patterns": [
+        "Quels outils utiliser pour le streaming ?",
+        "Quels sont les meilleurs logiciels de streaming ?",
+        "Quels équipements sont nécessaires pour le streaming ?"
+      ],
+      "responses": [
+        "Les outils populaires pour le streaming incluent OBS Studio, Streamlabs OBS, et XSplit. Pour l'équipement, vous aurez besoin d'une bonne caméra, d'un microphone de qualité, et d'une connexion Internet rapide.",
+        "Les meilleurs logiciels de streaming sont OBS Studio, Streamlabs OBS, et XSplit. En termes d'équipement, une caméra HD, un microphone de qualité, et une connexion Internet stable sont essentiels."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "stream_troubleshoot",
+      "patterns": [
+        "Comment résoudre les problèmes de streaming ?",
+        "Pourquoi mon stream lag ?",
+        "Comment corriger les problèmes de latence dans mon stream ?"
+      ],
+      "responses": [
+        "Pour résoudre les problèmes de streaming, vérifiez votre connexion Internet, assurez-vous que votre matériel fonctionne correctement, et ajustez les paramètres de votre logiciel de streaming. Vous pouvez également consulter les forums et les guides en ligne pour des solutions spécifiques.",
+        "Le lag dans votre stream peut être causé par une connexion Internet lente, des paramètres de résolution ou de débit binaire incorrects, ou un matériel de mauvaise qualité. Essayez de réduire la résolution ou le débit binaire, et assurez-vous que votre connexion Internet est stable."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "stream_schedule",
+      "patterns": [
+        "Comment planifier mon stream ?",
+        "Quel est le meilleur moment pour streamer ?",
+        "Comment créer un calendrier de streaming ?"
+      ],
+      "responses": [
+        "Pour planifier votre stream, choisissez des horaires réguliers qui conviennent à votre audience cible. Utilisez des outils de planification comme Google Calendar pour organiser vos sessions de streaming.",
+        "Le meilleur moment pour streamer dépend de votre audience cible. Essayez de streamer pendant les heures où votre audience est la plus active. Utilisez des outils d'analyse pour déterminer les meilleurs moments pour streamer."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "stream_promotion",
+      "patterns": [
+        "Comment promouvoir mon stream ?",
+        "Comment attirer plus de spectateurs à mon stream ?",
+        "Quels sont les meilleurs moyens de promouvoir mon stream ?"
+      ],
+      "responses": [
+        "Pour promouvoir votre stream, utilisez les réseaux sociaux, collaborez avec d'autres streamers, et engagez votre audience avec du contenu de qualité. Vous pouvez également utiliser des plateformes de promotion de stream et des forums pour attirer plus de spectateurs.",
+        "Attirer plus de spectateurs à votre stream peut se faire en utilisant les réseaux sociaux, en collaborant avec d'autres streamers, et en engageant votre audience avec du contenu interactif et de qualité."
+      ],
       "context": [""]
     }
   ]

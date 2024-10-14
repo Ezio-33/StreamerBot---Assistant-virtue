@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css')}}"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="chat-header">
+        <h1>StreamerBot---Assistant-virtuel-pour-Streamer-DashboardV2</h1>
+      </div>
+      <div class="chat-body">
+        <div id="chatbox">
+          <div class="botText">
+            <span>Bonjour, je suis votre bot.</span>
+          </div>
+        </div>
+      </div>
+      <div class="chat-footer">
+        <form>
+          <input
+            id="text"
+            type="text"
+            name="msg"
+            placeholder="Message"
+            class="form-control"
+          />
+          <button type="submit" id="send" class="btn btn-warning">
+            Envoyer
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("form").on("submit", function (event) {
+          var rawText = $("#text").val();
+          var userHtml =
+            '<div class="userText"><span>' + rawText + "</span></div>";
+          $("#text").val("");
+          $("#chatbox").append(userHtml);
+          $(".chat-body").scrollTop($(".chat-body")[0].scrollHeight);
+          $.ajax({
+            data: {
+              msg: rawText,
+            },
+            type: "POST",
+            url: "/get",
+          }).done(function (data) {
+            var botHtml =
+              '<div class="botText"><span>' + data + "</span></div>";
+            $("#chatbox").append($.parseHTML(botHtml));
+            $(".chat-body").scrollTop($(".chat-body")[0].scrollHeight);
+          });
+          event.preventDefault();
+        });
+      });
+    </script>
+  </body>
+</html>

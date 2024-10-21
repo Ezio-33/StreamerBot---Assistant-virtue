@@ -39,22 +39,31 @@ def chatbot_response():
     responses = []
 
     for sentence in sentences:
-        if sentence.startswith("Je m'appelle"):
-            name = sentence[11:].strip()
+        if sentence.lower().startswith("je m'appelle"):
+            name = sentence[13:].strip()
             ints = predict_class(sentence, model)
             res = getResponse(ints, intents, name)
-        elif sentence.startswith("Bonjour, je m'appelle"):
+        elif sentence.lower().startswith("bonjour, je m'appelle"):
             name = sentence[20:].strip()
             ints = predict_class(sentence, model)
             res = getResponse(ints, intents, name)
         else:
             ints = predict_class(sentence, model)
-            res = getResponse(ints, intents)
+            if not ints:
+                res = get_noanswer_response(intents)
+            else:
+                res = getResponse(ints, intents)
         responses.append(res)
 
     # Combiner les réponses pour chaque phrase en une seule réponse
     final_response = " ".join(responses)
     return final_response
+
+def get_noanswer_response(intents_json):
+    for intent in intents_json["intents"]:
+        if intent["tag"] == "noanswer":
+            return random.choice(intent["responses"])
+    return "Désolé, je ne vous ai pas compris."
 
 # fonctionnalités du chat
 def clean_up_sentence(sentence):

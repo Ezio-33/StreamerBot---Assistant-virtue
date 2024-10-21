@@ -40,7 +40,11 @@
     <script>
       $(document).ready(function () {
         $("form").on("submit", function (event) {
-          var rawText = $("#text").val();
+          var rawText = $("#text").val().trim();
+          if (rawText === "") {
+            alert("Le champ de texte ne doit pas être vide.");
+            return false;
+          }
           var userHtml =
             '<div class="userText"><span>' + rawText + "</span></div>";
           $("#text").val("");

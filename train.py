@@ -1,102 +1,111 @@
-# libraries
 import random
+import os
+from datetime import datetime
 from tensorflow.keras.optimizers import SGD
-from keras.layers import Dense, Dropout
-from keras.models import load_model
-from keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.models import Sequential
+print("Importations réussies")
 import numpy as np
 import pickle
 import json
 import nltk
 from nltk.stem import WordNetLemmatizer
+
+import tensorflow as tf
+print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+
+# Initialisation du lemmatizer de NLTK
 lemmatizer = WordNetLemmatizer()
+
+# Téléchargement des ressources nécessaires de NLTK
 nltk.download('omw-1.4')
 nltk.download("punkt")
 nltk.download("wordnet")
 nltk.download('punkt_tab')
 
+# Définir le répertoire de base
+base_dir = os.path.dirname(os.path.abspath(__file__))
 
-# init file
+# Vérifier si le fichier de modèle existe et le renommer avec un timestamp
+model_path = os.path.join(base_dir, "chatbot_model.keras")
+if os.path.exists(model_path):
+    stat = os.stat(model_path)
+    try:
+        creation_time = datetime.fromtimestamp(stat.st_birthtime).strftime('%d-%m-%Y_%Hh%Mmin%Ss')
+    except AttributeError:
+        # st_birthtime n'est pas disponible, utiliser st_ctime à la place
+        creation_time = datetime.fromtimestamp(stat.st_ctime).strftime('%d-%m-%Y_%Hh%Mmin%Ss')
+    new_model_path = os.path.join(base_dir, f"chatbot_model_{creation_time}.keras")
+    os.rename(model_path, new_model_path)
+    print(f"\033[92m\033[1mL'ancien modèle {os.path.basename(model_path)} a été renommé en {os.path.basename(new_model_path)}\033[0m")
+
+# Initialisation des listes pour les mots, classes et documents
 words = []
 classes = []
 documents = []
 ignore_words = ["?", "!"]
-data_file = open("/root/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard/intents.json").read()
-intents = json.loads(data_file)
 
-# words
+# Chargement du fichier JSON contenant les intentions
+data_file_path = os.path.join(base_dir, "intents.json")
+with open(data_file_path, 'r') as data_file:
+    intents = json.load(data_file)
+
+# Traitement des intentions pour extraire les mots et les classes
 for intent in intents["intents"]:
     for pattern in intent["patterns"]:
-
-        # take each word and tokenize it
+        # Tokenisation des mots dans chaque pattern
         w = nltk.word_tokenize(pattern)
         words.extend(w)
-        # adding documents
+        # Ajout des documents (pattern, tag)
         documents.append((w, intent["tag"]))
-
-        # adding classes to our class list
+        # Ajout des classes (tags) uniques
         if intent["tag"] not in classes:
             classes.append(intent["tag"])
 
-# lemmatizer
+# Lemmatisation et tri des mots, suppression des doublons
 words = [lemmatizer.lemmatize(w.lower()) for w in words if w not in ignore_words]
 words = sorted(list(set(words)))
 
+# Tri des classes
 classes = sorted(list(set(classes)))
 
+# Affichage des informations sur les documents, classes et mots
 print(len(documents), "documents")
-
 print(len(classes), "classes", classes)
+print(len(words), "mots lemmatisés uniques", words)
 
-print(len(words), "unique lemmatized words", words)
+# Sauvegarde des mots et des classes dans des fichiers pickle
+pickle.dump(words, open(os.path.join(base_dir, "words.pkl"), "wb"))
+pickle.dump(classes, open(os.path.join(base_dir, "classes.pkl"), "wb"))
 
-
-pickle.dump(words, open("/root/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard/words.pkl", "wb"))
-pickle.dump(classes, open("/root/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard/classes.pkl", "wb"))
-
-# training initializer
-# initializing training data
+# Initialisation des données d'entraînement
 training = []
 output_empty = [0] * len(classes)
+
+# Création des sacs de mots pour chaque document
 for doc in documents:
-    # initializing bag of words
     bag = []
-    # list of tokenized words for the pattern
     pattern_words = doc[0]
-    # lemmatize each word - create base word, in attempt to represent related words
     pattern_words = [lemmatizer.lemmatize(word.lower()) for word in pattern_words]
-    # create our bag of words array with 1, if word match found in current pattern
     for w in words:
         bag.append(1) if w in pattern_words else bag.append(0)
-
-    # output is a '0' for each tag and '1' for current tag (for each pattern)
     output_row = list(output_empty)
     output_row[classes.index(doc[1])] = 1
-
     training.append([bag, output_row])
 
-# shuffle our features and turn into np.array
+# Mélange des données d'entraînement
 random.shuffle(training)
 
-# training = np.array(training)
-# # create train and test lists. X - patterns, Y - intents
-# train_x = list(training[:, 0])
-# train_y = list(training[:, 1])
-
-#updated
-
-# Separate bag-of-words representations and output labels
+# Séparation des caractéristiques (X) et des étiquettes (Y)
 train_x = [item[0] for item in training]
 train_y = [item[1] for item in training]
 
-# Convert to NumPy arrays
+# Conversion en tableaux NumPy
 train_x = np.array(train_x)
 train_y = np.array(train_y)
-print("Training data created")
+print("Données d'entraînement créées")
 
-# actual training
-# Create model - 3 layers. First layer 128 neurons, second layer 64 neurons and 3rd output layer contains number of neurons
-# equal to number of intents to predict output intent with softmax
+# Création du modèle de réseau de neurones
 model = Sequential()
 model.add(Dense(128, input_shape=(len(train_x[0]),), activation="relu"))
 model.add(Dropout(0.5))
@@ -105,27 +114,15 @@ model.add(Dropout(0.5))
 model.add(Dense(len(train_y[0]), activation="softmax"))
 model.summary()
 
-# Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model
-
-# sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
-# model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"])
-
-#Updated (Removed decayIt seems like you're using a deprecated argument, decay, in the instantiation of the SGD optimizer from Keras. The decay argument has been deprecated in newer versions of Keras. To address this issue, 
-# you can switch to using the newer format for specifying learning rate schedules in the optimizer.)
-
+# Compilation du modèle avec l'optimiseur SGD
 sgd = SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
 model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"])
 
-
-# for choosing an optimal number of training epochs to avoid underfitting or overfitting use an early stopping callback to keras
-# based on either accuracy or loos monitoring. If the loss is being monitored, training comes to halt when there is an 
-# increment observed in loss values. Or, If accuracy is being monitored, training comes to halt when there is decrement observed in accuracy values.
-
-# from keras import callbacks 
-# earlystopping = callbacks.EarlyStopping(monitor ="loss", mode ="min", patience = 5, restore_best_weights = True)
-# callbacks =[earlystopping]
-
-# fitting and saving the model
+# Entraînement du modèle
 hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
-model.save("/root/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard/chatbot_model.h5", hist)
-print("model created")
+
+# Sauvegarde du modèle entraîné
+model.save(os.path.join(base_dir, "chatbot_model.keras"))
+print(f"\033[92m\033[1mL'ancien modèle {os.path.basename(new_model_path)} a été renommé en {os.path.basename(new_model_path)}\033[0m")
+date_du_jour = datetime.now().strftime('%d-%m-%Y_%Hh%Mmin%Ss')
+print(f"\033[92m\033[1mNouveau modèle créé le {date_du_jour}\033[0m")

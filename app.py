@@ -1,4 +1,4 @@
-# bibliothèques
+import os
 import random
 import numpy as np
 import pickle
@@ -13,11 +13,14 @@ from nltk.tokenize import sent_tokenize
 lemmatizer = WordNetLemmatizer()
 nltk.download('punkt')
 
+# Définir le répertoire de base
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # initialisation du chat
-model = load_model("/root/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard/chatbot_model.h5")
-data_file = open("/root/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard/intents.json").read()
-words = pickle.load(open("/root/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard/words.pkl", "rb"))
-classes = pickle.load(open("/root/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard/classes.pkl", "rb"))
+model = load_model(os.path.join(BASE_DIR, "chatbot_model.keras"))
+data_file = open(os.path.join(BASE_DIR, "intents.json")).read()
+words = pickle.load(open(os.path.join(BASE_DIR, "words.pkl"), "rb"))
+classes = pickle.load(open(os.path.join(BASE_DIR, "classes.pkl"), "rb"))
 
 app = Flask(__name__)
 # run_with_ngrok(app)
@@ -31,7 +34,7 @@ def chatbot_response():
     msg = request.form["msg"]
 
     # Charger et traiter le fichier JSON des intentions
-    data_file = open("/root/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard/intents.json").read()
+    data_file = open(os.path.join(BASE_DIR, "intents.json")).read()
     intents = json.loads(data_file)
 
     # Segmenter le message en phrases distinctes

@@ -1,0 +1,102 @@
+{
+  "questions": [
+    [
+      "need",
+      "peux tu m'aider",
+      "do",
+      "comment peux tu m'aider"
+    ],
+    [
+      "robots",
+      "qu'est ce que ça fait d'être un robot",
+      "computer",
+      "qu'est ce que ça fait d'être un ordinateur"
+    ],
+    [
+      "robots",
+      "quelle est la sensation d'être un robot",
+      "computer",
+      "quelle est la sensation d'être un ordinateur"
+    ],
+    [
+      "need",
+      "peux tu m'aider",
+      "usage",
+      "comment peux tu m'aider"
+    ]
+  ],
+  "responses": [
+    [
+      "need",
+      "je suis là pour vous aider . que voulez-vous savoir ?",
+      "help",
+      "je suis là pour vous aider . que voulez-vous savoir ?"
+    ],
+    [
+      "need",
+      "je peux vous aider avec de information sur la configuration et l'utilisation d'ai-licia . que voulez-vous savoir ?",
+      "do",
+      "je peux vous aider avec de information sur la configuration et l'utilisation d'ai-licia ."
+    ],
+    [
+      "need",
+      "dites-moi ce dont vous avez besoin et je ferai de mon mieux pour vous aider .",
+      "help",
+      "dites-moi ce dont vous avez besoin et je ferai de mon mieux pour vous aider ."
+    ],
+    [
+      "need",
+      "pour configurer ai-licia , vous pouvez suivre le instruction sur le site ou me poser de question spécifiques .",
+      "help",
+      "pour configurer ai-licia , vous pouvez suivre le instruction sur le site ou me poser de question spécifiques ."
+    ],
+    [
+      "need",
+      "pour toute question sur l'utilisation d'ai-licia , n'hésitez pa à demander . je suis là pour vous assister .",
+      "help",
+      "pour toute question sur l'utilisation d'ai-licia , n'hésitez pa à demander . je suis là pour vous assister ."
+    ],
+    [
+      "need",
+      "je peux vous fournir de instruction détaillées sur la configuration et l'utilisation d'ai-licia . que voulez-vous savoir en particulier ?",
+      "help",
+      "je peux vous fournir de instruction détaillées sur la configuration et l'utilisation d'ai-licia . que voulez-vous savoir en particulier ?"
+    ],
+    [
+      "need",
+      "si vous rencontrez de problèmes ou avez de question sur ai-licia , je suis là pour vous aider à le résoudre . que voulez-vous faire ?",
+      "help",
+      "si vous rencontrez de problèmes ou avez de question sur ai-licia , je suis là pour vous aider à le résoudre . que voulez-vous faire ?"
+    ],
+    [
+      "need",
+      "je suis ici pour vous aider . que voulez-vous savoir ?",
+      "help",
+      "je suis là pour vous aider . que voulez-vous savoir ?"
+    ],
+    [
+      "need",
+      "dites-moi ce dont vous avez besoin et je ferai de mon mieux pour vous assister .",
+      "help",
+      "dites-moi ce dont vous avez besoin et je ferai de mon mieux pour vous aider ."
+    ],
+    [
+      "need",
+      "pour toute question sur l'utilisation d'ai-licia , n'hésitez pa à demander . je suis là pour vous aider .",
+      "help",
+      "pour toute question sur l'utilisation d'ai-licia , n'hésitez pa à demander . je suis là pour vous assister ."
+    ],
+    [
+      "business",
+      "je suis ici pour rendre votre expérience de streaming plus fluide et interactive avec ai-licia .",
+      "bot1",
+      "oui , je suis un bot , et je suis ici pour rendre votre expérience de streaming plus fluide et interactive ."
+    ],
+    [
+      "need",
+      "je peux vous aider avec de information sur la configuration et l'utilisation d'ai-licia . que voulez-vous savoir ?",
+      "usage",
+      "je peux vous aider avec de information sur la configuration et l'utilisation d'ai-licia ."
+    ]
+  ]
+}

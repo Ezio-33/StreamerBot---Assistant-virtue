@@ -1,18 +1,14 @@
-import random
 import os
+import json
+import pickle
+import numpy as np
+import random
 from datetime import datetime
 from tensorflow.keras.optimizers import SGD
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.models import Sequential
-print("Importations réussies")
-import numpy as np
-import pickle
-import json
-import nltk
 from nltk.stem import WordNetLemmatizer
-
-import tensorflow as tf
-print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+import nltk
 
 # Initialisation du lemmatizer de NLTK
 lemmatizer = WordNetLemmatizer()
@@ -21,7 +17,6 @@ lemmatizer = WordNetLemmatizer()
 nltk.download('omw-1.4')
 nltk.download("punkt")
 nltk.download("wordnet")
-nltk.download('punkt_tab')
 
 # Définir le répertoire de base
 base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -29,15 +24,8 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 # Vérifier si le fichier de modèle existe et le renommer avec un timestamp
 model_path = os.path.join(base_dir, "chatbot_model.keras")
 if os.path.exists(model_path):
-    stat = os.stat(model_path)
-    try:
-        creation_time = datetime.fromtimestamp(stat.st_birthtime).strftime('%d-%m-%Y_%Hh%Mmin%Ss')
-    except AttributeError:
-        # st_birthtime n'est pas disponible, utiliser st_ctime à la place
-        creation_time = datetime.fromtimestamp(stat.st_ctime).strftime('%d-%m-%Y_%Hh%Mmin%Ss')
-    new_model_path = os.path.join(base_dir, f"chatbot_model_{creation_time}.keras")
-    os.rename(model_path, new_model_path)
-    print(f"\033[92m\033[1mL'ancien modèle {os.path.basename(model_path)} a été renommé en {os.path.basename(new_model_path)}\033[0m")
+    timestamp = datetime.now().strftime("%d-%m-%Y_%Hh%Mmin%Ss")
+    os.rename(model_path, f"{model_path}_{timestamp}")
 
 # Initialisation des listes pour les mots, classes et documents
 words = []
@@ -53,12 +41,12 @@ with open(data_file_path, 'r') as data_file:
 # Traitement des intentions pour extraire les mots et les classes
 for intent in intents["intents"]:
     for pattern in intent["patterns"]:
-        # Tokenisation des mots dans chaque pattern
+        # Tokeniser chaque mot dans la phrase
         w = nltk.word_tokenize(pattern)
         words.extend(w)
-        # Ajout des documents (pattern, tag)
+        # Ajouter au corpus
         documents.append((w, intent["tag"]))
-        # Ajout des classes (tags) uniques
+        # Ajouter à notre liste de classes
         if intent["tag"] not in classes:
             classes.append(intent["tag"])
 
@@ -69,60 +57,72 @@ words = sorted(list(set(words)))
 # Tri des classes
 classes = sorted(list(set(classes)))
 
-# Affichage des informations sur les documents, classes et mots
-print(len(documents), "documents")
-print(len(classes), "classes", classes)
-print(len(words), "mots lemmatisés uniques", words)
-
-# Sauvegarde des mots et des classes dans des fichiers pickle
-pickle.dump(words, open(os.path.join(base_dir, "words.pkl"), "wb"))
-pickle.dump(classes, open(os.path.join(base_dir, "classes.pkl"), "wb"))
-
-# Initialisation des données d'entraînement
+# Création des données d'entraînement
 training = []
 output_empty = [0] * len(classes)
 
-# Création des sacs de mots pour chaque document
 for doc in documents:
+    # Initialisation du sac de mots
     bag = []
+    # Liste des mots tokenisés pour le pattern
     pattern_words = doc[0]
+    # Lemmatisation de chaque mot - création de la base de mots
     pattern_words = [lemmatizer.lemmatize(word.lower()) for word in pattern_words]
+    # Création du sac de mots : 1 si le mot existe dans le pattern, sinon 0
     for w in words:
         bag.append(1) if w in pattern_words else bag.append(0)
+
+    # Sortie est un 0 pour chaque tag et 1 pour le tag actuel (pour chaque pattern)
     output_row = list(output_empty)
     output_row[classes.index(doc[1])] = 1
+
     training.append([bag, output_row])
 
-# Mélange des données d'entraînement
+# Mélanger les données et les convertir en array
 random.shuffle(training)
 
-# Séparation des caractéristiques (X) et des étiquettes (Y)
-train_x = [item[0] for item in training]
-train_y = [item[1] for item in training]
+# Vérification des longueurs des sacs de mots et des sorties
+for i in range(len(training)):
+    if len(training[i][0]) != len(words):
+        print(f"Erreur de longueur dans le sac de mots à l'index {i}")
+    if len(training[i][1]) != len(classes):
+        print(f"Erreur de longueur dans la sortie à l'index {i}")
 
-# Conversion en tableaux NumPy
-train_x = np.array(train_x)
-train_y = np.array(train_y)
-print("Données d'entraînement créées")
+# Conversion en array NumPy
+train_x = np.array([item[0] for item in training])
+train_y = np.array([item[1] for item in training])
 
-# Création du modèle de réseau de neurones
+# Création du modèle - 3 couches. Première couche 128 neurones, deuxième couche 64 neurones et troisième couche de sortie contient le nombre de neurones
+# égal au nombre d'intentions pour prédire l'intention de sortie avec softmax
 model = Sequential()
-model.add(Dense(128, input_shape=(len(train_x[0]),), activation="relu"))
+model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
 model.add(Dropout(0.5))
-model.add(Dense(64, activation="relu"))
+model.add(Dense(64, activation='relu'))
 model.add(Dropout(0.5))
-model.add(Dense(len(train_y[0]), activation="softmax"))
-model.summary()
+model.add(Dense(len(train_y[0]), activation='softmax'))
 
-# Compilation du modèle avec l'optimiseur SGD
-sgd = SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
-model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"])
+# Compilation du modèle. Définir la perte et l'optimiseur
+sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
-# Entraînement du modèle
-hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+# Entraînement et sauvegarde du modèle
+hist = model.fit(train_x, train_y, epochs=200, batch_size=5, verbose=1)
+model.save(model_path, hist)
 
-# Sauvegarde du modèle entraîné
-model.save(os.path.join(base_dir, "chatbot_model.keras"))
-print(f"\033[92m\033[1mL'ancien modèle {os.path.basename(new_model_path)} a été renommé en {os.path.basename(new_model_path)}\033[0m")
-date_du_jour = datetime.now().strftime('%d-%m-%Y_%Hh%Mmin%Ss')
-print(f"\033[92m\033[1mNouveau modèle créé le {date_du_jour}\033[0m")
+print("Modèle créé")
+
+# Sauvegarde des mots et des classes
+# Sauvegarde des mots et des classes avec vérification de l'existence des fichiers
+words_path = os.path.join(base_dir, "words.pkl")
+classes_path = os.path.join(base_dir, "classes.pkl")
+
+if os.path.exists(words_path):
+    timestamp = datetime.now().strftime("%d-%m-%Y_%Hh%Mmin%Ss")
+    os.rename(words_path, f"{words_path}_{timestamp}")
+
+if os.path.exists(classes_path):
+    timestamp = datetime.now().strftime("%d-%m-%Y_%Hh%Mmin%Ss")
+    os.rename(classes_path, f"{classes_path}_{timestamp}")
+
+pickle.dump(words, open(words_path, "wb"))
+pickle.dump(classes, open(classes_path, "wb"))

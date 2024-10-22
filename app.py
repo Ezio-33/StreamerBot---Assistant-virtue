@@ -3,12 +3,13 @@ import random
 import numpy as np
 import pickle
 import json
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 from flask_ngrok import run_with_ngrok
 import nltk
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import sent_tokenize
+from transformers import pipeline
 
 lemmatizer = WordNetLemmatizer()
 nltk.download('punkt')
@@ -22,8 +23,15 @@ data_file = open(os.path.join(BASE_DIR, "intents.json")).read()
 words = pickle.load(open(os.path.join(BASE_DIR, "words.pkl"), "rb"))
 classes = pickle.load(open(os.path.join(BASE_DIR, "classes.pkl"), "rb"))
 
+# Initialisation du modèle de langage avancé
+nlp = pipeline("text-generation", model="dbddv01/gpt2-french-small")
+
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'  # Clé secrète pour les sessions
 # run_with_ngrok(app)
+
+# Mémoire de la conversation
+conversation_memory = []
 
 @app.route("/")
 def home():
@@ -56,7 +64,13 @@ def chatbot_response():
                 res = get_noanswer_response(intents)
             else:
                 res = getResponse(ints, intents)
+        
+        # Adapter et contextualiser la réponse avec GPT-2
+        res = generate_contextual_response(res, msg)
         responses.append(res)
+
+    # Mettre à jour la mémoire de la conversation
+    conversation_memory.append({"user": msg, "bot": responses})
 
     # Combiner les réponses pour chaque phrase en une seule réponse
     final_response = " ".join(responses)
@@ -103,6 +117,8 @@ def predict_class(sentence, model):
     return return_list
 
 def getResponse(ints, intents_json, name=None):
+    if not ints:
+        return get_noanswer_response(intents_json)
     tag = ints[0]["intent"]
     list_of_intents = intents_json["intents"]
     for i in list_of_intents:
@@ -112,6 +128,18 @@ def getResponse(ints, intents_json, name=None):
                 result = result.replace("{n}", name)
             break
     return result
+
+# Fonction pour générer des réponses contextuelles avec un modèle de langage avancé
+def generate_contextual_response(response, user_input):
+    context = " ".join([f"User: {entry['user']} Bot: {entry['bot']}" for entry in conversation_memory])
+    prompt = f"{context} User: {user_input} Bot: {response}"
+    conversation = nlp(prompt, max_new_tokens=50, num_return_sequences=1, pad_token_id=50256, truncation=True)
+    generated_text = conversation[0]['generated_text']
+
+    # Nettoyer la réponse générée pour supprimer les préfixes "User:" et "Bot:"
+    generated_text = generated_text.replace("User:", "").replace("Bot:", "").strip()
+
+    return generated_text
 
 if __name__ == "__main__":
     app.run()

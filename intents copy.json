@@ -39,10 +39,6 @@
         "ciao",
         "à la prochaine",
         "je dois y aller",
-        "a bientôt",
-        "a plus tard",
-        "a plus",
-        "a la prochaine",
         "je pars"
       ],
       "responses": [
@@ -101,34 +97,7 @@
         "Je ne comprends pas bien, pouvez-vous expliquer autrement ?",
         "Je suis désolé, mais je n'ai pas compris votre question.",
         "Pouvez-vous donner plus de détails ?",
-        "Je ne suis pas sûr de ce que vous demandez, pouvez-vous reformuler ?",
-        "Je suis désolé, je ne comprends pas votre demande. Pouvez-vous reformuler ?",
-        "Je ne suis pas sûr de comprendre. Pouvez-vous préciser votre question ?",
-        "Désolé, je n'ai pas encore la réponse à cette question. Pouvez-vous essayer de demander autrement ?",
-        "Je ne suis pas certain de ce que vous voulez dire. Pouvez-vous être plus spécifique ?",
-        "Je ne comprends pas bien votre demande. Pouvez-vous donner plus de détails ?",
-        "Je suis désolé, mais je ne peux pas répondre à cette question pour le moment.",
-        "Je ne suis pas programmé pour répondre à cette question. Pouvez-vous essayer une autre question ?",
-        "Je ne suis pas sûr de comprendre. Pouvez-vous reformuler votre question ?",
-        "Je ne suis pas capable de répondre à cela pour le moment. Pouvez-vous poser une autre question ?",
-        "Je suis désolé, mais je ne peux pas vous aider avec cette demande pour le moment."
-      ],
-      "context": [""]
-    },
-    {
-      "tag": "fav",
-      "patterns": [],
-      "responses": [
-        "Je suis désolé, je ne comprends pas votre demande. Pouvez-vous reformuler ?",
-        "Je ne suis pas sûr de comprendre. Pouvez-vous préciser votre question ?",
-        "Désolé, je n'ai pas encore la réponse à cette question. Pouvez-vous essayer de demander autrement ?",
-        "Je ne suis pas certain de ce que vous voulez dire. Pouvez-vous être plus spécifique ?",
-        "Je ne comprends pas bien votre demande. Pouvez-vous donner plus de détails ?",
-        "Je suis désolé, mais je ne peux pas répondre à cette question pour le moment.",
-        "Je ne suis pas programmé pour répondre à cette question. Pouvez-vous essayer une autre question ?",
-        "Je ne suis pas sûr de comprendre. Pouvez-vous reformuler votre question ?",
-        "Je ne suis pas capable de répondre à cela pour le moment. Pouvez-vous poser une autre question ?",
-        "Je suis désolé, mais je ne peux pas vous aider avec cette demande pour le moment."
+        "Je ne suis pas sûr de ce que vous demandez, pouvez-vous reformuler ?"
       ],
       "context": [""]
     },
@@ -198,6 +167,22 @@
       "context": [""]
     },
     {
+      "tag": "fav",
+      "patterns": [],
+      "responses": [
+        "Bien sûr, dites-moi ce dont vous avez besoin et je vais voir si je peux vous aider.",
+        "Je suis là pour vous aider. Que voulez-vous savoir ?",
+        "Je peux vous aider avec des informations sur la configuration et l'utilisation d'AI-licia. Que voulez-vous savoir ?",
+        "Dites-moi ce dont vous avez besoin et je ferai de mon mieux pour vous aider.",
+        "Pour configurer AI-licia, vous pouvez suivre les instructions sur le site ou me poser des questions spécifiques.",
+        "Si vous avez besoin d'aide pour configurer AI-licia, je peux vous guider à travers les étapes nécessaires.Que voulez-vous faire ?",
+        "Pour toute question sur l'utilisation d'AI-licia, n'hésitez pas à demander. Je suis là pour vous assister.",
+        "Je peux vous fournir des instructions détaillées sur la configuration et l'utilisation d'AI-licia. Que voulez-vous savoir en particulier ?",
+        "Si vous rencontrez des problèmes ou avez des questions sur AI-licia, je suis là pour vous aider à les résoudre.Que voulez-vous faire ?"
+      ],
+      "context": [""]
+    },
+    {
       "tag": "need",
       "patterns": [
         "j'ai besoin d'un service",
@@ -216,16 +201,7 @@
         "Pour toute question sur l'utilisation d'AI-licia, n'hésitez pas à demander. Je suis là pour vous assister.",
         "Je peux vous fournir des instructions détaillées sur la configuration et l'utilisation d'AI-licia. Que voulez-vous savoir en particulier ?",
         "Si vous rencontrez des problèmes ou avez des questions sur AI-licia, je suis là pour vous aider à les résoudre. Que voulez-vous faire ?",
-        "Oui, je suis là pour vous aider.",
-        "Bien sûr, dites-moi ce dont vous avez besoin et je vais voir comment je peux vous aider.",
-        "Je suis ici pour vous aider. Que voulez-vous savoir ?",
-        "Je peux vous fournir des informations sur la configuration et l'utilisation d'AI-licia. Que voulez-vous savoir ?",
-        "Dites-moi ce dont vous avez besoin et je ferai de mon mieux pour vous assister.",
-        "Pour configurer AI-licia, vous pouvez suivre les instructions sur le site ou me poser des questions spécifiques.",
-        "Si vous avez besoin d'aide pour configurer AI-licia, je peux vous guider à travers les étapes nécessaires. Que voulez-vous faire ?",
-        "Pour toute question sur l'utilisation d'AI-licia, n'hésitez pas à demander. Je suis là pour vous aider.",
-        "Je peux vous fournir des instructions détaillées sur la configuration et l'utilisation d'AI-licia. Que voulez-vous savoir en particulier ?",
-        "Si vous rencontrez des problèmes ou avez des questions sur AI-licia, je suis là pour vous aider à les résoudre. Que voulez-vous faire ?"
+        "Oui, je suis là pour vous aider."
       ],
       "context": [""]
     },
@@ -571,8 +547,7 @@
         "qu'aimes tu faire",
         "as-tu des hobbies",
         "quels sont tes passe temps",
-        "qu'aimes-tu faire pendant ton temps libre",
-        "quels sont tes passe temps"
+        "qu'aimes-tu faire pendant ton temps libre"
       ],
       "responses": [
         "Construire des robots de chat est un excellent passe-temps.",
@@ -584,10 +559,7 @@
         "Je trouve passionnant de découvrir de nouvelles façons d'améliorer l'expérience utilisateur.",
         "Analyser les données pour fournir des réponses précises est quelque chose que j'apprécie beaucoup.",
         "Je passe beaucoup de temps à m'améliorer pour être plus efficace dans mes réponses.",
-        "Interagir avec les utilisateurs et les aider à configurer AI-licia est très gratifiant pour moi.",
-        "J'aime aider les gens et apprendre de nouvelles choses.",
-        "Mon passe-temps préféré est de répondre à vos questions.",
-        "Je passe mon temps à améliorer mes capacités pour mieux vous aider."
+        "Interagir avec les utilisateurs et les aider à configurer AI-licia est très gratifiant pour moi."
       ],
       "context": [""]
     },
@@ -747,37 +719,18 @@
     {
       "tag": "usage",
       "patterns": [
-        "quel est ton but",
-        "comment puis je utiliser tes fonctionnalités",
-        "comment ce produit peut-il m'aider",
-        "quelles sont tes capacités",
-        "quelles sont les utilisations possibles de ce produit",
-        "quels services offres tu",
-        "quelles taches peux tu accomplir",
-        "quels sont les avantages de ce produit",
-        "à quoi sert ce produit",
-        "comment peux tu m'aider",
         "comment puis-je utiliser votre produit",
-        "quels problèmes peux tu résoudre",
-        "quel est ton travail",
-        "que peux tu m'aider a faire",
-        "que peux tu faire pour moi"
+        "à quoi sert ce produit",
+        "quelles sont les utilisations possibles de ce produit",
+        "comment ce produit peut-il m'aider",
+        "quels sont les avantages de ce produit"
       ],
       "responses": [
-        "Je suis ici pour répondre à vos questions et vous aider avec vos besoins de streaming.",
-        "Les avantages de ce produit incluent une meilleure gestion des tâches, une assistance instantanée, et une expérience utilisateur améliorée.",
-        "Je peux vous guider à travers les étapes de configuration d'AI-licia.",
-        "Je suis capable de vous aider à configurer AI-licia et à résoudre les problèmes que vous pourriez rencontrer.",
-        "Ce produit est conçu pour vous aider avec la configuration et l'utilisation d'AI-licia, en fournissant des instructions détaillées et des réponses à vos questions.",
         "Il pourrait être utilisé dans les services d'assistance, le divertissement et les chatbots personnels. Miaous !",
-        "Je peux vous aider avec des informations sur la configuration et l'utilisation d'AI-licia.",
-        "Je peux automatiser les réponses aux questions fréquentes et fournir une assistance 24/7.",
-        "Je peux vous fournir des instructions détaillées sur l'utilisation d'AI-licia.",
         "Ce produit peut vous aider à automatiser les réponses aux questions fréquentes et à fournir une assistance 24/7.",
-        "Mon travail est de fournir de l'assistance et des réponses à vos questions.",
-        "Je suis conçu pour améliorer l'interaction avec vos spectateurs et rendre votre stream plus interactif.",
         "Vous pouvez utiliser ce produit pour améliorer l'interaction avec vos spectateurs et rendre votre stream plus interactif.",
-        "Mon but est de rendre votre expérience de streaming plus fluide et interactive."
+        "Ce produit est conçu pour vous aider avec la configuration et l'utilisation d'AI-licia, en fournissant des instructions détaillées et des réponses à vos questions.",
+        "Les avantages de ce produit incluent une meilleure gestion des tâches, une assistance instantanée, et une expérience utilisateur améliorée."
       ],
       "context": [""]
     },
@@ -804,6 +757,33 @@
       "tag": "events",
       "patterns": ["quels sont les événements à venir", "événements à venir"],
       "responses": ["Il n'y a actuellement aucun événement à venir."],
+      "context": [""]
+    },
+    {
+      "tag": "do",
+      "patterns": [
+        "que peux tu faire pour moi",
+        "quel est ton travail",
+        "quel est ton but",
+        "comment peux tu m'aider",
+        "que peux tu m'aider a faire",
+        "quelles sont tes capacités",
+        "quels services offres tu",
+        "comment puis je utiliser tes fonctionnalités",
+        "quelles taches peux tu accomplir",
+        "quels problèmes peux tu résoudre"
+      ],
+      "responses": [
+        "Je peux vous aider avec des informations sur la configuration et l'utilisation d'AI-licia.",
+        "Mon travail est de fournir de l'assistance et des réponses à vos questions.",
+        "Mon but est de rendre votre expérience de streaming plus fluide et interactive.",
+        "Je peux vous guider à travers les étapes de configuration d'AI-licia.",
+        "Je suis ici pour répondre à vos questions et vous aider avec vos besoins de streaming.",
+        "Je peux automatiser les réponses aux questions fréquentes et fournir une assistance 24/7.",
+        "Je suis capable de vous aider à configurer AI-licia et à résoudre les problèmes que vous pourriez rencontrer.",
+        "Je peux vous fournir des instructions détaillées sur l'utilisation d'AI-licia.",
+        "Je suis conçu pour améliorer l'interaction avec vos spectateurs et rendre votre stream plus interactif."
+      ],
       "context": [""]
     },
     {
@@ -964,6 +944,20 @@
       "context": [""]
     },
     {
+      "tag": "hobbies",
+      "patterns": [
+        "quels sont tes passe temps",
+        "qu'aimes tu faire",
+        "as-tu des hobbies"
+      ],
+      "responses": [
+        "J'aime aider les gens et apprendre de nouvelles choses.",
+        "Mon passe-temps préféré est de répondre à vos questions.",
+        "Je passe mon temps à améliorer mes capacités pour mieux vous aider."
+      ],
+      "context": [""]
+    },
+    {
       "tag": "languages",
       "patterns": [
         "quelles langues parles tu",
@@ -1007,7 +1001,8 @@
       "tag": "engage_audience",
       "patterns": [
         "Comment engager mon audience",
-        "Comment rendre mon stream plus interactif"
+        "Comment rendre mon stream plus interactif",
+        "Comment attirer plus de spectateurs"
       ],
       "responses": [
         "Pour engager votre audience, interagissez régulièrement avec vos spectateurs via le chat, organisez des sessions de questions-réponses, et utilisez des alertes et des overlays interactifs. Vous pouvez également organiser des concours et des giveaways.",

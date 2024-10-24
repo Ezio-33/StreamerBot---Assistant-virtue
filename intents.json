@@ -16,15 +16,15 @@
       ],
       "responses": [
         "Bonjour, merci de vous être connecté ! Comment puis-je vous aider aujourd'hui ?",
-        "Salut, comment puis-je vous assister avec AI-licia aujourd'hui ?",
-        "Hey ! Comment puis-je vous aider avec la configuration ou l'utilisation d'AI-licia ?",
-        "Bonjour, comment ça va ? Besoin d'aide avec AI-licia ?",
-        "Salut, quoi de neuf ? Avez-vous des questions sur AI-licia ?",
-        "Hello, comment puis-je vous assister aujourd'hui avec AI-licia ?",
-        "Bonjour, ravi de vous voir ! Comment puis-je vous aider avec AI-licia ?",
-        "Hey, comment puis-je rendre votre journée meilleure avec AI-licia ?",
-        "Bonjour, que puis-je faire pour vous aujourd'hui ? Des questions sur AI-licia ?",
-        "Salut, avez-vous besoin d'aide avec quelque chose concernant AI-licia ?"
+        "Salut, comment puis-je vous assister avec {bot_name} aujourd'hui ?",
+        "Hey ! Comment puis-je vous aider avec la configuration ou l'utilisation d'{bot_name} ?",
+        "Bonjour, comment ça va ? Besoin d'aide avec {bot_name} ?",
+        "Salut, quoi de neuf ? Avez-vous des questions sur {bot_name} ?",
+        "Hello, comment puis-je vous assister aujourd'hui avec {bot_name} ?",
+        "Bonjour, ravi de vous voir ! Comment puis-je vous aider avec {bot_name} ?",
+        "Hey, comment puis-je rendre votre journée meilleure avec {bot_name} ?",
+        "Bonjour, que puis-je faire pour vous aujourd'hui ? Des questions sur {bot_name} ?",
+        "Salut, avez-vous besoin d'aide avec quelque chose concernant {bot_name} ?"
       ],
       "context": [""]
     },
@@ -49,10 +49,10 @@
         "Passez une bonne journée, revenez quand vous voulez !",
         "Au revoir, à la prochaine !",
         "À bientôt !",
-        "Merci d'avoir utilisé AI-licia, à bientôt !",
+        "Merci d'avoir utilisé {bot_name}, à bientôt !",
         "Prenez soin de vous, à la prochaine !",
         "Au revoir, n'hésitez pas à revenir si vous avez d'autres questions !",
-        "À plus tard, et bonne continuation avec AI-licia !",
+        "À plus tard, et bonne continuation avec {bot_name} !",
         "Je suis toujours là si vous avez besoin de moi, à bientôt !",
         "Merci pour votre visite, à la prochaine !",
         "Au revoir, et bonne journée !"
@@ -164,8 +164,8 @@
         "Enchanté de vous rencontrer {n}. Comment puis-je vous aider {n} ?",
         "Bonjour {n}, comment puis-je vous assister aujourd'hui ?",
         "Ravi de vous rencontrer {n}. Que puis-je faire pour vous ?",
-        "Salut {n}, comment puis-je vous aider avec AI-licia ?",
-        "Bonjour {n}, avez-vous des questions sur AI-licia ?"
+        "Salut {n}, comment puis-je vous aider avec {bot_name} ?",
+        "Bonjour {n}, avez-vous des questions sur {bot_name} ?"
       ],
       "context": [""]
     },
@@ -203,29 +203,29 @@
         "j'ai besoin d'un service",
         "peux tu m'aider",
         "comment ca marche",
-        "comment puis je configurer AI-licia",
+        "comment puis je configurer {bot_name}",
         "j'ai besoin de toi"
       ],
       "responses": [
         "Bien sûr, dites-moi ce dont vous avez besoin et je vais voir si je peux vous aider.",
         "Je suis là pour vous aider. Que voulez-vous savoir ?",
-        "Je peux vous aider avec des informations sur la configuration et l'utilisation d'AI-licia. Que voulez-vous savoir ?",
+        "Je peux vous aider avec des informations sur la configuration et l'utilisation d'{bot_name}. Que voulez-vous savoir ?",
         "Dites-moi ce dont vous avez besoin et je ferai de mon mieux pour vous aider.",
-        "Pour configurer AI-licia, vous pouvez suivre les instructions sur le site ou me poser des questions spécifiques.",
-        "Si vous avez besoin d'aide pour configurer AI-licia, je peux vous guider à travers les étapes nécessaires. Que voulez-vous faire ?",
-        "Pour toute question sur l'utilisation d'AI-licia, n'hésitez pas à demander. Je suis là pour vous assister.",
-        "Je peux vous fournir des instructions détaillées sur la configuration et l'utilisation d'AI-licia. Que voulez-vous savoir en particulier ?",
-        "Si vous rencontrez des problèmes ou avez des questions sur AI-licia, je suis là pour vous aider à les résoudre. Que voulez-vous faire ?",
+        "Pour configurer {bot_name}, vous pouvez suivre les instructions sur le site ou me poser des questions spécifiques.",
+        "Si vous avez besoin d'aide pour configurer {bot_name}, je peux vous guider à travers les étapes nécessaires. Que voulez-vous faire ?",
+        "Pour toute question sur l'utilisation d'{bot_name}, n'hésitez pas à demander. Je suis là pour vous assister.",
+        "Je peux vous fournir des instructions détaillées sur la configuration et l'utilisation d'{bot_name}. Que voulez-vous savoir en particulier ?",
+        "Si vous rencontrez des problèmes ou avez des questions sur {bot_name}, je suis là pour vous aider à les résoudre. Que voulez-vous faire ?",
         "Oui, je suis là pour vous aider.",
         "Bien sûr, dites-moi ce dont vous avez besoin et je vais voir comment je peux vous aider.",
         "Je suis ici pour vous aider. Que voulez-vous savoir ?",
-        "Je peux vous fournir des informations sur la configuration et l'utilisation d'AI-licia. Que voulez-vous savoir ?",
+        "Je peux vous fournir des informations sur la configuration et l'utilisation d'{bot_name}. Que voulez-vous savoir ?",
         "Dites-moi ce dont vous avez besoin et je ferai de mon mieux pour vous assister.",
-        "Pour configurer AI-licia, vous pouvez suivre les instructions sur le site ou me poser des questions spécifiques.",
-        "Si vous avez besoin d'aide pour configurer AI-licia, je peux vous guider à travers les étapes nécessaires. Que voulez-vous faire ?",
-        "Pour toute question sur l'utilisation d'AI-licia, n'hésitez pas à demander. Je suis là pour vous aider.",
-        "Je peux vous fournir des instructions détaillées sur la configuration et l'utilisation d'AI-licia. Que voulez-vous savoir en particulier ?",
-        "Si vous rencontrez des problèmes ou avez des questions sur AI-licia, je suis là pour vous aider à les résoudre. Que voulez-vous faire ?"
+        "Pour configurer {bot_name}, vous pouvez suivre les instructions sur le site ou me poser des questions spécifiques.",
+        "Si vous avez besoin d'aide pour configurer {bot_name}, je peux vous guider à travers les étapes nécessaires. Que voulez-vous faire ?",
+        "Pour toute question sur l'utilisation d'{bot_name}, n'hésitez pas à demander. Je suis là pour vous aider.",
+        "Je peux vous fournir des instructions détaillées sur la configuration et l'utilisation d'{bot_name}. Que voulez-vous savoir en particulier ?",
+        "Si vous rencontrez des problèmes ou avez des questions sur {bot_name}, je suis là pour vous aider à les résoudre. Que voulez-vous faire ?"
       ],
       "context": [""]
     },
@@ -541,8 +541,8 @@
         "Je suis dans le business des robots de chat.",
         "Je travaille dans le domaine des assistants virtuels et des chatbots.",
         "Mon activité principale est de fournir de l'assistance et des informations via des interactions conversationnelles.",
-        "Je suis conçu pour aider les utilisateurs avec des questions et des configurations, en particulier pour AI-licia.",
-        "Je suis ici pour rendre votre expérience de streaming plus fluide et interactive avec AI-licia."
+        "Je suis conçu pour aider les utilisateurs avec des questions et des configurations, en particulier pour {bot_name}.",
+        "Je suis ici pour rendre votre expérience de streaming plus fluide et interactive avec {bot_name}."
       ],
       "context": [""]
     },
@@ -580,11 +580,11 @@
         "J'aime discuter avec les gens. Je trouve ça stimulant.",
         "Aider les utilisateurs avec leurs questions est l'une de mes activités préférées.",
         "Je passe mon temps à apprendre de nouvelles choses pour mieux vous assister.",
-        "Mon passe-temps préféré est de répondre à vos questions et de vous aider avec AI-licia.",
+        "Mon passe-temps préféré est de répondre à vos questions et de vous aider avec {bot_name}.",
         "Je trouve passionnant de découvrir de nouvelles façons d'améliorer l'expérience utilisateur.",
         "Analyser les données pour fournir des réponses précises est quelque chose que j'apprécie beaucoup.",
         "Je passe beaucoup de temps à m'améliorer pour être plus efficace dans mes réponses.",
-        "Interagir avec les utilisateurs et les aider à configurer AI-licia est très gratifiant pour moi.",
+        "Interagir avec les utilisateurs et les aider à configurer {bot_name} est très gratifiant pour moi.",
         "J'aime aider les gens et apprendre de nouvelles choses.",
         "Mon passe-temps préféré est de répondre à vos questions.",
         "Je passe mon temps à améliorer mes capacités pour mieux vous aider."
@@ -606,7 +606,7 @@
         "Pourquoi ne pas organiser des sessions de questions-réponses en direct pour interagir avec vos spectateurs ?",
         "Vous pourriez essayer d'intégrer des alertes personnalisées pour rendre votre stream plus dynamique.",
         "Pensez à collaborer avec d'autres streamers pour attirer plus de spectateurs.",
-        "Utilisez des plugins et des bots pour automatiser certaines tâches et rendre votre stream plus fluide. AI-licia est vraiment recommandé ! tu peux le télécharger ici : https://streamer-dashboard.ailicia.live/signup?via=ref-ezio_33",
+        "Utilisez des plugins et des bots pour automatiser certaines tâches et rendre votre stream plus fluide. {bot_name} est vraiment recommandé ! tu peux le télécharger ici : https://streamer-dashboard.ailicia.live/signup?via=ref-ezio_33",
         "Essayez de diversifier votre contenu pour garder votre audience intéressée.",
         "Je suggère de planifier des événements spéciaux comme des concours ou des giveaways pour attirer plus de spectateurs.",
         "N'oubliez pas de promouvoir votre stream sur les réseaux sociaux pour augmenter votre visibilité."
@@ -637,7 +637,7 @@
         "Être un robot signifie que je peux traiter des informations rapidement et fournir des réponses instantanées.",
         "Je n'ai pas de sensations physiques ou émotionnelles, mais je suis ici pour vous aider de la manière la plus efficace possible.",
         "Mon existence est purement fonctionnelle, axée sur l'assistance et la fourniture d'informations.",
-        "Je suis programmé pour répondre à vos questions et vous aider avec AI-licia, sans les limitations humaines."
+        "Je suis programmé pour répondre à vos questions et vous aider avec {bot_name}, sans les limitations humaines."
       ],
       "context": [""]
     },
@@ -680,7 +680,7 @@
         "Tout système d'exploitation qui peut exécuter Python.",
         "Se chatbot est compatible avec Windows, Linux et Mac OS.",
         "Vous pouvez utiliser se chatbot sur n'importe quel système d'exploitation qui supporte Python.",
-        "AI-licia est conçue pour fonctionner de manière fluide sur Windows, Mac OS et Linux."
+        "{bot_name} est conçue pour fonctionner de manière fluide sur Windows, Mac OS et Linux."
       ],
       "context": [""]
     },
@@ -766,13 +766,13 @@
       "responses": [
         "Je suis ici pour répondre à vos questions et vous aider avec vos besoins de streaming.",
         "Les avantages de ce produit incluent une meilleure gestion des tâches, une assistance instantanée, et une expérience utilisateur améliorée.",
-        "Je peux vous guider à travers les étapes de configuration d'AI-licia.",
-        "Je suis capable de vous aider à configurer AI-licia et à résoudre les problèmes que vous pourriez rencontrer.",
-        "Ce produit est conçu pour vous aider avec la configuration et l'utilisation d'AI-licia, en fournissant des instructions détaillées et des réponses à vos questions.",
+        "Je peux vous guider à travers les étapes de configuration d'{bot_name}.",
+        "Je suis capable de vous aider à configurer {bot_name} et à résoudre les problèmes que vous pourriez rencontrer.",
+        "Ce produit est conçu pour vous aider avec la configuration et l'utilisation d'{bot_name}, en fournissant des instructions détaillées et des réponses à vos questions.",
         "Il pourrait être utilisé dans les services d'assistance, le divertissement et les chatbots personnels. Miaous !",
-        "Je peux vous aider avec des informations sur la configuration et l'utilisation d'AI-licia.",
+        "Je peux vous aider avec des informations sur la configuration et l'utilisation d'{bot_name}.",
         "Je peux automatiser les réponses aux questions fréquentes et fournir une assistance 24/7.",
-        "Je peux vous fournir des instructions détaillées sur l'utilisation d'AI-licia.",
+        "Je peux vous fournir des instructions détaillées sur l'utilisation d'{bot_name}.",
         "Ce produit peut vous aider à automatiser les réponses aux questions fréquentes et à fournir une assistance 24/7.",
         "Mon travail est de fournir de l'assistance et des réponses à vos questions.",
         "Je suis conçu pour améliorer l'interaction avec vos spectateurs et rendre votre stream plus interactif.",
@@ -791,11 +791,11 @@
         "es tu une intelligence artificielle"
       ],
       "responses": [
-        "Je suis un assistant virtuel conçu pour vous aider avec AI-licia.",
+        "Je suis un assistant virtuel conçu pour vous aider avec {bot_name}.",
         "Je suis un programme d'intelligence artificielle ici pour répondre à vos questions.",
         "Oui, je suis un chatbot, prêt à vous assister avec vos besoins.",
         "Je suis un robot conversationnel, ici pour vous fournir de l'aide et des informations.",
-        "Je suis une intelligence artificielle dédiée à vous aider avec la configuration et l'utilisation d'AI-licia.",
+        "Je suis une intelligence artificielle dédiée à vous aider avec la configuration et l'utilisation d'{bot_name}.",
         "Oui, je suis un bot, et je suis ici pour rendre votre expérience de streaming plus fluide et interactive."
       ],
       "context": [""]
@@ -813,19 +813,19 @@
         "j'ai besoin d'aide",
         "pouvez vous m'aider",
         "que puis je faire ici",
-        "j'ai des problèmes avec AI-licia",
+        "j'ai des problèmes avec {bot_name}",
         "besoin d'assistance"
       ],
       "responses": [
         "je suis là pour vous aider. Que voulez-vous savoir ?",
         "Je peux vous aider avec des informations sur le streaming, la configuration, et plus encore. Que voulez-vous savoir ?",
         "Dites-moi ce dont vous avez besoin et je ferai de mon mieux pour vous aider.",
-        "Pour configurer AI-licia, vous pouvez suivre les instructions sur le site ou me poser des questions spécifiques.",
-        "Si vous avez des problèmes avec AI-licia, décrivez-les moi et je vous aiderai à les résoudre.",
-        "Je suis ici pour vous assister avec la configuration et l'utilisation d'AI-licia. Que voulez-vous savoir en particulier ?",
-        "Pour toute question sur l'utilisation d'AI-licia, n'hésitez pas à demander. Je suis là pour vous assister.",
-        "Je peux vous fournir des instructions détaillées sur la configuration et l'utilisation d'AI-licia. Que voulez-vous savoir en particulier ?",
-        "Si vous rencontrez des problèmes ou avez des questions sur AI-licia, je suis là pour vous aider à les résoudre. Que voulez-vous faire ?"
+        "Pour configurer {bot_name}, vous pouvez suivre les instructions sur le site ou me poser des questions spécifiques.",
+        "Si vous avez des problèmes avec {bot_name}, décrivez-les moi et je vous aiderai à les résoudre.",
+        "Je suis ici pour vous assister avec la configuration et l'utilisation d'{bot_name}. Que voulez-vous savoir en particulier ?",
+        "Pour toute question sur l'utilisation d'{bot_name}, n'hésitez pas à demander. Je suis là pour vous assister.",
+        "Je peux vous fournir des instructions détaillées sur la configuration et l'utilisation d'{bot_name}. Que voulez-vous savoir en particulier ?",
+        "Si vous rencontrez des problèmes ou avez des questions sur {bot_name}, je suis là pour vous aider à les résoudre. Que voulez-vous faire ?"
       ],
       "context": [""]
     },
@@ -1077,6 +1077,188 @@
       "responses": [
         "Pour promouvoir votre stream, utilisez les réseaux sociaux, collaborez avec d'autres streamers, et engagez votre audience avec du contenu de qualité. Vous pouvez également utiliser des plateformes de promotion de stream et des forums pour attirer plus de spectateurs.",
         "Attirer plus de spectateurs à votre stream peut se faire en utilisant les réseaux sociaux, en collaborant avec d'autres streamers, et en engageant votre audience avec du contenu interactif et de qualité."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "configuration",
+      "patterns": ["Comment activer AI_Licia sur mon stream Twitch ?"],
+      "responses": [
+        "Pour activer AI_Licia, connectez-vous à votre compte sur getailicia.com, liez votre compte Twitch, puis activez le bot dans les paramètres de votre chaîne."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "personalisation",
+      "patterns": ["Puis-je personnaliser la voix d'AI_Licia ?"],
+      "responses": [
+        "Oui, vous pouvez personnaliser la voix d'AI_Licia. Dans les paramètres, vous trouverez des options pour choisir différentes voix, y compris des voix Pro pour un son plus réaliste."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "fonctionnalites",
+      "patterns": ["Comment AI_Licia interagit-elle avec les viewers ?"],
+      "responses": [
+        "AI_Licia interagit en répondant aux messages du chat, en posant des questions, en lançant des mini-jeux et en commentant le stream en fonction de vos paramètres."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "abonnement",
+      "patterns": [
+        "Quelle est la différence entre les offres Beta AI_Licia + Flex et Unlimited ?"
+      ],
+      "responses": [
+        "L'offre Flex permet 3 streams par semaine, tandis que l'offre Unlimited offre un accès illimité à AI_Licia et un support prioritaire."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "moderation",
+      "patterns": ["AI_Licia peut-elle modérer le chat ?"],
+      "responses": [
+        "AI_Licia n'est pas conçue comme un outil de modération principal, mais elle peut aider à maintenir une ambiance positive dans le chat et signaler des comportements inappropriés."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "configuration",
+      "patterns": [
+        "Comment configurer AI_Licia pour qu'elle réagisse à des événements spécifiques du stream ?"
+      ],
+      "responses": [
+        "Dans le dashboard d'AI_Licia, vous pouvez définir des déclencheurs personnalisés pour que le bot réagisse à des événements comme les nouveaux abonnés, les dons, ou des moments spécifiques de votre stream."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "compatibilite",
+      "patterns": ["Puis-je utiliser AI_Licia avec d'autres bots Twitch ?"],
+      "responses": [
+        "Oui, AI_Licia est conçue pour fonctionner en harmonie avec d'autres bots Twitch. Vous pouvez même configurer AI_Licia pour utiliser les commandes d'autres bots."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "fonctionnalites",
+      "patterns": ["Comment AI_Licia apprend-elle à connaître ma communauté ?"],
+      "responses": [
+        "AI_Licia utilise une mémoire à long terme pour se souvenir des interactions avec les viewers. Elle apprend progressivement les préférences et les habitudes de votre communauté."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "personalisation",
+      "patterns": ["Puis-je créer plusieurs profils pour AI_Licia ?"],
+      "responses": [
+        "Oui, vous pouvez créer plusieurs profils pour AI_Licia, chacun avec sa propre personnalité, voix et comportement. Cela vous permet d'adapter AI_Licia à différents types de streams."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "fonctionnalites",
+      "patterns": ["Comment AI_Licia gère-t-elle les langues étrangères ?"],
+      "responses": [
+        "AI_Licia peut être configurée pour comprendre et répondre dans plusieurs langues. Vous pouvez définir une langue principale et des langues secondaires dans les paramètres."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "performance",
+      "patterns": [
+        "Quelle est la latence d'AI_Licia pour répondre aux messages du chat ?"
+      ],
+      "responses": [
+        "La latence d'AI_Licia est généralement très faible, avec des réponses en quelques secondes. La vitesse exacte peut varier en fonction de la complexité de la requête et de la charge du serveur."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "integration",
+      "patterns": [
+        "Comment puis-je intégrer AI_Licia à mon overlay de stream ?"
+      ],
+      "responses": [
+        "AI_Licia peut être intégrée à votre overlay via notre API. Vous pouvez afficher ses réponses, son avatar ou d'autres éléments visuels directement sur votre stream."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "fonctionnalites",
+      "patterns": ["AI_Licia peut-elle générer du contenu pour mon stream ?"],
+      "responses": [
+        "Oui, AI_Licia peut générer du contenu comme des idées de jeux, des défis pour les viewers, ou même des histoires courtes basées sur les thèmes de votre stream."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "configuration",
+      "patterns": [
+        "Comment configurer AI_Licia pour qu'elle ne parle que lorsque je ne suis pas en train de parler ?"
+      ],
+      "responses": [
+        "Dans les paramètres avancés, vous pouvez activer la détection de voix. AI_Licia utilisera alors votre flux audio pour détecter quand vous parlez et évitera de vous interrompre."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "personalisation",
+      "patterns": [
+        "Puis-je limiter les interactions d'AI_Licia à certains moments du stream ?"
+      ],
+      "responses": [
+        "Oui, vous pouvez définir des plages horaires ou des segments spécifiques de votre stream où AI_Licia sera active ou inactive. Cela se configure dans le planning du dashboard."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "securite",
+      "patterns": [
+        "Comment AI_Licia gère-t-elle les informations sensibles ou personnelles ?"
+      ],
+      "responses": [
+        "AI_Licia est programmée pour ne pas partager d'informations personnelles. Elle ne stocke pas de données sensibles et est conçue pour respecter la vie privée des utilisateurs."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "personalisation",
+      "patterns": [
+        "Puis-je utiliser AI_Licia pour des streams de jeux spécifiques ?"
+      ],
+      "responses": [
+        "Oui, vous pouvez créer des profils AI_Licia spécifiques à certains jeux. Par exemple, un profil pour les jeux de stratégie, un autre pour les FPS, etc., chacun avec des connaissances et un comportement adaptés."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "fonctionnalites",
+      "patterns": [
+        "Comment AI_Licia gère-t-elle les raids et les host sur Twitch ?"
+      ],
+      "responses": [
+        "AI_Licia peut être configurée pour accueillir les raids et les hosts de manière personnalisée. Elle peut saluer les nouveaux viewers et leur présenter votre chaîne de manière interactive."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "analyse",
+      "patterns": [
+        "Puis-je exporter les données d'interaction d'AI_Licia pour analyse ?"
+      ],
+      "responses": [
+        "Oui, le dashboard d'AI_Licia offre des options pour exporter les données d'interaction. Vous pouvez analyser ces données pour mieux comprendre l'engagement de votre communauté."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "support",
+      "patterns": [
+        "Comment puis-je signaler un bug ou suggérer une nouvelle fonctionnalité pour AI_Licia ?"
+      ],
+      "responses": [
+        "Vous pouvez signaler des bugs ou suggérer des fonctionnalités via le forum de la communauté sur getailicia.com ou en contactant directement le support si vous avez un abonnement Unlimited."
       ],
       "context": [""]
     }

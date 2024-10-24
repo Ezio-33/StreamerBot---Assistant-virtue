@@ -13,6 +13,7 @@
     <div class="container">
       <div class="chat-header">
         <h1>StreamerBot---Assistant-virtuel-pour-Streamer-DashboardV2</h1>
+        <button id="quit" class="btn btn-danger">Quitter</button>
       </div>
       <div class="chat-body">
         <div id="chatbox">
@@ -34,6 +35,22 @@
             Envoyer
           </button>
         </form>
+        <div id="feedback" style="display: none">
+          <button id="correct" class="btn btn-success">Correct</button>
+          <button id="incorrect" class="btn btn-danger">Incorrect</button>
+          <div id="expected-response" style="display: none">
+            <input
+              id="expected-text"
+              type="text"
+              name="expected"
+              placeholder="Réponse attendue"
+              class="form-control"
+            />
+            <button id="submit-expected" class="btn btn-primary">
+              Soumettre
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -61,8 +78,44 @@
               '<div class="botText"><span>' + data + "</span></div>";
             $("#chatbox").append($.parseHTML(botHtml));
             $(".chat-body").scrollTop($(".chat-body")[0].scrollHeight);
+            $("#feedback").show();
           });
           event.preventDefault();
+        });
+
+        $("#correct").on("click", function () {
+          $("#feedback").hide();
+        });
+
+        $("#incorrect").on("click", function () {
+          $("#expected-response").show();
+        });
+
+        $("#submit-expected").on("click", function () {
+          var expectedText = $("#expected-text").val().trim();
+          if (expectedText === "") {
+            alert("Le champ de réponse attendue ne doit pas être vide.");
+            return false;
+          }
+          $.ajax({
+            data: {
+              expected: expectedText,
+            },
+            type: "POST",
+            url: "/feedback",
+          }).done(function () {
+            $("#expected-response").hide();
+            $("#feedback").hide();
+          });
+        });
+
+        $("#quit").on("click", function () {
+          $.ajax({
+            type: "POST",
+            url: "/quit",
+          }).done(function () {
+            window.location.href = "/";
+          });
         });
       });
     </script>

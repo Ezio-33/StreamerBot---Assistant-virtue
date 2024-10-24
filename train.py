@@ -5,7 +5,8 @@ import numpy as np
 import random
 from datetime import datetime
 from tensorflow.keras.optimizers import SGD
-from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.optimizers.schedules import ExponentialDecay
+from tensorflow.keras.layers import Dense, Dropout, Input
 from tensorflow.keras.models import Sequential
 from nltk.stem import WordNetLemmatizer
 import nltk
@@ -20,12 +21,19 @@ nltk.download("wordnet")
 
 # Définir le répertoire de base
 base_dir = os.path.dirname(os.path.abspath(__file__))
+backup_dir = os.path.join(base_dir, "data", "Backup")
+model_backup_dir = os.path.join(backup_dir, "Model")
+
+# Créer les répertoires de sauvegarde s'ils n'existent pas
+os.makedirs(backup_dir, exist_ok=True)
+os.makedirs(model_backup_dir, exist_ok=True)
 
 # Vérifier si le fichier de modèle existe et le renommer avec un timestamp
 model_path = os.path.join(base_dir, "chatbot_model.keras")
 if os.path.exists(model_path):
     timestamp = datetime.now().strftime("%d-%m-%Y_%Hh%Mmin%Ss")
-    os.rename(model_path, f"{model_path}_{timestamp}")
+    new_model_path = os.path.join(model_backup_dir, f"chatbot_model.keras_{timestamp}")
+    os.rename(model_path, new_model_path)
 
 # Initialisation des listes pour les mots, classes et documents
 words = []
@@ -95,14 +103,23 @@ train_y = np.array([item[1] for item in training])
 # Création du modèle - 3 couches. Première couche 128 neurones, deuxième couche 64 neurones et troisième couche de sortie contient le nombre de neurones
 # égal au nombre d'intentions pour prédire l'intention de sortie avec softmax
 model = Sequential()
-model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
+model.add(Input(shape=(len(train_x[0]),)))
+model.add(Dense(128, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(64, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(len(train_y[0]), activation='softmax'))
 
+# Définir le planificateur de taux d'apprentissage
+initial_learning_rate = 0.01
+lr_schedule = ExponentialDecay(
+    initial_learning_rate,
+    decay_steps=100000,
+    decay_rate=0.96,
+    staircase=True)
+
 # Compilation du modèle. Définir la perte et l'optimiseur
-sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+sgd = SGD(learning_rate=lr_schedule, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 # Entraînement et sauvegarde du modèle
@@ -111,18 +128,27 @@ model.save(model_path, hist)
 
 print("Modèle créé")
 
-# Sauvegarde des mots et des classes
 # Sauvegarde des mots et des classes avec vérification de l'existence des fichiers
 words_path = os.path.join(base_dir, "words.pkl")
 classes_path = os.path.join(base_dir, "classes.pkl")
 
+# Définir les répertoires de sauvegarde spécifiques pour les mots et les classes
+words_backup_dir = os.path.join(backup_dir, "words")
+classes_backup_dir = os.path.join(backup_dir, "Classes")
+
+# Créer les répertoires de sauvegarde s'ils n'existent pas
+os.makedirs(words_backup_dir, exist_ok=True)
+os.makedirs(classes_backup_dir, exist_ok=True)
+
 if os.path.exists(words_path):
     timestamp = datetime.now().strftime("%d-%m-%Y_%Hh%Mmin%Ss")
-    os.rename(words_path, f"{words_path}_{timestamp}")
+    new_words_path = os.path.join(words_backup_dir, f"words.pkl_{timestamp}")
+    os.rename(words_path, new_words_path)
 
 if os.path.exists(classes_path):
     timestamp = datetime.now().strftime("%d-%m-%Y_%Hh%Mmin%Ss")
-    os.rename(classes_path, f"{classes_path}_{timestamp}")
+    new_classes_path = os.path.join(classes_backup_dir, f"classes.pkl_{timestamp}")
+    os.rename(classes_path, new_classes_path)
 
 pickle.dump(words, open(words_path, "wb"))
 pickle.dump(classes, open(classes_path, "wb"))

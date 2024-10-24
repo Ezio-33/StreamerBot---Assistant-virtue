@@ -97,6 +97,66 @@
       "je peux vous aider avec de information sur la configuration et l'utilisation d'ai-licia . que voulez-vous savoir ?",
       "usage",
       "je peux vous aider avec de information sur la configuration et l'utilisation d'ai-licia ."
+    ],
+    [
+      "noanswer",
+      "je suis désolé , je ne comprends pa votre demande . pouvez-vous reformuler ?",
+      "fav",
+      "je suis désolé , je ne comprends pa votre demande . pouvez-vous reformuler ?"
+    ],
+    [
+      "noanswer",
+      "je ne suis pa sûr de comprendre . pouvez-vous préciser votre question ?",
+      "fav",
+      "je ne suis pa sûr de comprendre . pouvez-vous préciser votre question ?"
+    ],
+    [
+      "noanswer",
+      "désolé , je n'ai pa encore la réponse à cette question . pouvez-vous essayer de demander autrement ?",
+      "fav",
+      "désolé , je n'ai pa encore la réponse à cette question . pouvez-vous essayer de demander autrement ?"
+    ],
+    [
+      "noanswer",
+      "je ne suis pa certain de ce que vous voulez dire . pouvez-vous être plus spécifique ?",
+      "fav",
+      "je ne suis pa certain de ce que vous voulez dire . pouvez-vous être plus spécifique ?"
+    ],
+    [
+      "noanswer",
+      "je ne comprends pa bien votre demande . pouvez-vous donner plus de détails ?",
+      "fav",
+      "je ne comprends pa bien votre demande . pouvez-vous donner plus de détails ?"
+    ],
+    [
+      "noanswer",
+      "je suis désolé , mais je ne peux pa répondre à cette question pour le moment .",
+      "fav",
+      "je suis désolé , mais je ne peux pa répondre à cette question pour le moment ."
+    ],
+    [
+      "noanswer",
+      "je ne suis pa programmé pour répondre à cette question . pouvez-vous essayer une autre question ?",
+      "fav",
+      "je ne suis pa programmé pour répondre à cette question . pouvez-vous essayer une autre question ?"
+    ],
+    [
+      "noanswer",
+      "je ne suis pa sûr de comprendre . pouvez-vous reformuler votre question ?",
+      "fav",
+      "je ne suis pa sûr de comprendre . pouvez-vous reformuler votre question ?"
+    ],
+    [
+      "noanswer",
+      "je ne suis pa capable de répondre à cela pour le moment . pouvez-vous poser une autre question ?",
+      "fav",
+      "je ne suis pa capable de répondre à cela pour le moment . pouvez-vous poser une autre question ?"
+    ],
+    [
+      "noanswer",
+      "je suis désolé , mais je ne peux pa vous aider avec cette demande pour le moment .",
+      "fav",
+      "je suis désolé , mais je ne peux pa vous aider avec cette demande pour le moment ."
     ]
   ]
 }

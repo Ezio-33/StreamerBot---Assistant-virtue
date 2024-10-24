@@ -60,32 +60,19 @@ def chatbot_response():
 @app.route("/feedback", methods=["POST"])
 def feedback():
     expected_response = request.form["expected"]
-    user_input = conversation_memory[-1]["user"]
-    # Vérifier s'il existe déjà une intention avec le même pattern
-    for intent in intents["intents"]:
-        if user_input in intent["patterns"]:
-            intent["responses"].append(expected_response)
-            break
-    else:
-        # Ajouter une nouvelle intention si aucun pattern existant n'est trouvé
-        new_intent = {
-            "tag": "user_feedback",
-            "patterns": [user_input],
-            "responses": [expected_response],
-            "context": [""]
-        }
-        intents["intents"].append(new_intent)
-    
+    # Ajouter la nouvelle donnée d'entraînement
+    new_intent = {
+        "tag": "user_feedback",
+        "patterns": [conversation_memory[-1]["user"]],
+        "responses": [expected_response],
+        "context": [""]
+    }
+    intents["intents"].append(new_intent)
     with open(os.path.join(BASE_DIR, "intents.json"), "w") as file:
         json.dump(intents, file, indent=4)
-    
-    return "Feedback reçu et enregistré."
-
-@app.route("/quit", methods=["POST"])
-def quit():
     # Réentraîner le modèle avec les nouvelles données
     train_model()
-    return "Modèle mis à jour et application fermée."
+    return "Feedback reçu et modèle mis à jour."
 
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)

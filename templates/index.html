@@ -13,7 +13,6 @@
     <div class="container">
       <div class="chat-header">
         <h1>StreamerBot---Assistant-virtuel-pour-Streamer-DashboardV2</h1>
-        <button id="quit" class="btn btn-danger">Quitter</button>
       </div>
       <div class="chat-body">
         <div id="chatbox">
@@ -106,15 +105,6 @@
           }).done(function () {
             $("#expected-response").hide();
             $("#feedback").hide();
-          });
-        });
-
-        $("#quit").on("click", function () {
-          $.ajax({
-            type: "POST",
-            url: "/quit",
-          }).done(function () {
-            window.location.href = "/";
           });
         });
       });

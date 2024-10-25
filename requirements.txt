@@ -1,11 +1,9 @@
 # Liste des dépendances requises pour le projet
 flask
 nltk
-dearpygui
-tensorflow
 numpy
-spacy
-gensim
-chatterbot
-uuid
-sentencepiece
+pickle
+tensorflow
+transformers
+scikit-learn
+colorama

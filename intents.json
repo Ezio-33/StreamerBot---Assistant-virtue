@@ -201,6 +201,15 @@
       "responses": [
         "Pour configuré AI-licia je te recommende de lire le site novasquare"
       ]
+    },
+    {
+      "tag": "bonjour_je_suis_toto",
+      "patterns": [
+        "Bonjour je suis toto"
+      ],
+      "responses": [
+        "Enchanté de vous rencontre comment je peu vous aider ?"
+      ]
     }
   ]
 }

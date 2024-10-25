@@ -26,9 +26,7 @@
         "Bonjour, que puis-je faire pour vous aujourd'hui ? Des questions sur AI-licia ?",
         "Salut, avez-vous besoin d'aide avec quelque chose concernant AI-licia ?"
       ],
-      "context": [
-        ""
-      ]
+      "context": [""]
     },
     {
       "tag": "goodbye",
@@ -59,9 +57,7 @@
         "Merci pour votre visite, à la prochaine !",
         "Au revoir, et bonne journée !"
       ],
-      "context": [
-        ""
-      ]
+      "context": [""]
     },
     {
       "tag": "thanks",
@@ -87,15 +83,11 @@
         "Merci à vous pour votre confiance.",
         "Si vous avez besoin de plus d'aide, je suis là."
       ],
-      "context": [
-        ""
-      ]
+      "context": [""]
     },
     {
       "tag": "noanswer",
-      "patterns": [
-        ""
-      ],
+      "patterns": [""],
       "responses": [
         "Désolé, je ne vous ai pas compris.",
         "Pouvez-vous reformuler votre question ?",
@@ -118,9 +110,7 @@
         "Je ne suis pas capable de répondre à cela pour le moment. Pouvez-vous poser une autre question ?",
         "Je suis désolé, mais je ne peux pas vous aider avec cette demande pour le moment."
       ],
-      "context": [
-        ""
-      ]
+      "context": [""]
     },
     {
       "tag": "fav",
@@ -137,9 +127,7 @@
         "Je ne suis pas capable de répondre à cela pour le moment. Pouvez-vous poser une autre question ?",
         "Je suis désolé, mais je ne peux pas vous aider avec cette demande pour le moment."
       ],
-      "context": [
-        ""
-      ]
+      "context": [""]
     },
     {
       "tag": "name1",
@@ -152,9 +140,7 @@
         "peux tu te présenter",
         "es tu un programme d'intelligence artificielle",
         "tu est quoi",
-        "comment tu t'appel",
-        "Bonjour comment vous appelez vous ?",
-        "Bonjour comment vous appeler vous ?"
+        "comment tu t'appel"
       ],
       "responses": [
         "Je suis julie un chatbot, ici pour vous aider.",
@@ -163,44 +149,9 @@
         "Je m'appelle Julie, votre assistant virtuel personnalisé.",
         "Je suis Julie, un programme conçu pour vous assister.",
         "Je suis julie un assistant virtuel prêt à vous aider avec vos besoins.",
-        "Je suis Julie, un programme d'intelligence artificielle dédié à vous fournir de l'aide et des informations.",
-        "Je m'appel Julie comment je peux vous aider ?",
-        "Je m'appel Julie, comment je peux vous aider ?",
-        "Je suis julie un assistant virtuel, ravi de vous rencontrer!"
+        "Je suis Julie, un programme d'intelligence artificielle dédié à vous fournir de l'aide et des informations."
       ],
-      "context": [
-        ""
-      ]
-    },
-    {
-      "tag": "comment_tu_peux_m'aider_?",
-      "patterns": [
-        "comment tu peux m'aider ?",
-        "et comment tu peux m'aider ?",
-        "Comment tu peux m'aider ?"
-      ],
-      "responses": [
-        "Je peux vous fournir des informations sur la configuration et l'utilisation d'Ailicia. Que voulez-vous savoir ?",
-        "Je suis ici pour t'aider a configuré tes lives"
-      ]
-    },
-    {
-      "tag": "mais_m'assister_comment_?",
-      "patterns": [
-        "mais m'assister comment ?"
-      ],
-      "responses": [
-        "Je suis la pour vous assister dans la configuration de AI-Licia"
-      ]
-    },
-    {
-      "tag": "pareillement_et_dis_moi_commen",
-      "patterns": [
-        "pareillement et dis moi comment configuré AI licia ?"
-      ],
-      "responses": [
-        "Pour configuré AI-licia je te recommende de lire le site novasquare"
-      ]
+      "context": [""]
     }
   ]
 }

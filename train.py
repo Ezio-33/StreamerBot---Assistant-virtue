@@ -10,6 +10,7 @@ from tensorflow.keras.layers import Dense, Dropout, Input
 from tensorflow.keras.models import Sequential
 from nltk.stem import WordNetLemmatizer
 import nltk
+import shutil
 
 # Initialisation du lemmatizer de NLTK
 lemmatizer = WordNetLemmatizer()
@@ -23,10 +24,12 @@ nltk.download("wordnet")
 base_dir = os.path.dirname(os.path.abspath(__file__))
 backup_dir = os.path.join(base_dir, "data", "Backup")
 model_backup_dir = os.path.join(backup_dir, "Model")
+intents_backup_dir = os.path.join(backup_dir, "Intents")
 
 # Créer les répertoires de sauvegarde s'ils n'existent pas
 os.makedirs(backup_dir, exist_ok=True)
 os.makedirs(model_backup_dir, exist_ok=True)
+os.makedirs(intents_backup_dir, exist_ok=True)
 
 # Vérifier si le fichier de modèle existe et le renommer avec un timestamp
 model_path = os.path.join(base_dir, "chatbot_model.keras")
@@ -34,6 +37,13 @@ if os.path.exists(model_path):
     timestamp = datetime.now().strftime("%d-%m-%Y_%Hh%Mmin%Ss")
     new_model_path = os.path.join(model_backup_dir, f"chatbot_model.keras_{timestamp}")
     os.rename(model_path, new_model_path)
+
+# Sauvegarder le fichier intents.json
+intents_path = os.path.join(base_dir, "intents.json")
+if os.path.exists(intents_path):
+    timestamp = datetime.now().strftime("%d-%m-%Y_%Hh%Mmin%Ss")
+    new_intents_path = os.path.join(intents_backup_dir, f"intents_{timestamp}.json")
+    shutil.copy2(intents_path, new_intents_path)
 
 # Initialisation des listes pour les mots, classes et documents
 words = []
@@ -83,7 +93,6 @@ for doc in documents:
     # Sortie est un 0 pour chaque tag et 1 pour le tag actuel (pour chaque pattern)
     output_row = list(output_empty)
     output_row[classes.index(doc[1])] = 1
-
     training.append([bag, output_row])
 
 # Mélanger les données et les convertir en array
@@ -124,7 +133,7 @@ model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy
 
 # Entraînement et sauvegarde du modèle
 hist = model.fit(train_x, train_y, epochs=200, batch_size=5, verbose=1)
-model.save(model_path, hist)
+model.save(model_path)
 
 print("Modèle créé")
 

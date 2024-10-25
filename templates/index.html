@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
+    <meta charset="UTF-8" />
+    <title>Chatbot</title>
     <link
       rel="stylesheet"
       type="text/css"
       href="{{ url_for('static', filename='style.css')}}"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
-
   <body>
     <div class="container">
       <div class="chat-header">
         <h1>StreamerBot---Assistant-virtuel-pour-Streamer-DashboardV2</h1>
+        <button id="quit" class="btn btn-danger">Quitter</button>
       </div>
       <div class="chat-body">
         <div id="chatbox">
@@ -96,8 +98,10 @@
             alert("Le champ de réponse attendue ne doit pas être vide.");
             return false;
           }
+          var question = $(".userText").last().text();
           $.ajax({
             data: {
+              question: question,
               expected: expectedText,
             },
             type: "POST",
@@ -105,6 +109,15 @@
           }).done(function () {
             $("#expected-response").hide();
             $("#feedback").hide();
+          });
+        });
+
+        $("#quit").on("click", function () {
+          $.ajax({
+            type: "POST",
+            url: "/quit",
+          }).done(function () {
+            window.location.href = "/";
           });
         });
       });

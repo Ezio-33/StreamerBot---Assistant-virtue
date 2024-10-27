@@ -2,7 +2,7 @@
 
 ## Description
 
-**StreamerBot** est un assistant virtuel intelligent fonctionnant localement, conçu pour optimiser l'expérience des utilisateurs du site [Streamer Dashboard](https://streamer-dashboard.ailicia.live/fr/dashboard). Ce chatbot vise à fournir une interaction fluide et naturelle, sans besoin de connexion internet, et s'exécute sur des machines modestes (processeur Intel de 8ème génération, 8 Go de RAM DDR4, sans carte graphique).
+**StreamerBot** est un assistant virtuel intelligent fonctionnant localement, conçu pour optimiser l'expérience des utilisateurs du site [Streamer Dashboard](https://streamer-dashboard.ailicia.live/signup?via=ref-ezio_33). Ce chatbot vise à fournir une interaction fluide et naturelle, sans besoin de connexion internet, et s'exécute sur des machines modestes (processeur Intel de 8ème génération, 8 Go de RAM DDR4, sans carte graphique).
 
 ## Fonctionnalités
 

@@ -7,7 +7,7 @@
 ## Fonctionnalités
 
 - 💬 **Chatbot local** : Offre des réponses intelligentes en fonction des interactions avec les utilisateurs, sans connexion à Internet.
-- 🚀 **Optimisation de l'expérience utilisateur** : Prévus pour s'intègre dans le future au site Streamer Dashboard pour améliorer la fluidité de navigation et l'accès aux informations.
+- 🚀 **Optimisation de l'expérience utilisateur** : Prévus pour s'intégrer dans le futur au site Streamer Dashboard pour améliorer la fluidité de navigation et l'accès aux informations.
 - ⚙️ **Personnalisable** : Les réponses et le comportement du chatbot peuvent être ajustés pour mieux correspondre aux besoins spécifiques des streamers.
 - 🖥️ **Performance optimisée** : Fonctionne sur des configurations matérielles modérées sans nécessiter de GPU.
 
@@ -25,17 +25,14 @@
    pip install -r requirements.txt
    ```
 3. **Configuration** :
-   - Ajustez les paramètres dans le fichier de configuration `config.yaml` pour adapter le bot à vos besoins.
+   - Ajustez les paramètres dans le fichier de configuration `.env` pour adapter le bot à vos besoins.
    - L'installation ne nécessite pas de connexion Internet une fois les dépendances installées.
 
 ## Configuration
 
-1. **Paramètres personnalisés** :
-   - `BOT_NAME` : Nom affiché du chatbot.
-   - `RESPONSE_DELAY` : Délai entre les réponses pour simuler un dialogue plus naturel.
-   - `LOG_LEVEL` : Niveau de journalisation pour le débogage (`info`, `debug`, `error`).
-2. **Données d'entraînement** :
-   - Le bot utilise des données locales pour ajuster ses réponses. Pour personnaliser les interactions, modifiez le fichier `training_data.json`.
+**Données d'entraînement** :
+
+- Le bot utilise des données locales pour ajuster ses réponses. Pour personnaliser les interactions, modifiez le fichier `intents.json`.
 
 ## Prérequis
 
@@ -50,8 +47,8 @@
 ## Technologies utilisées
 
 - **Langage** : Python
-- **Bibliothèques IA** : `transformers`, `torch` (pour le modèle de traitement du langage naturel)
-- **Gestion des dialogues** : `chatterbot`, `nltk` pour les interactions conversationnelles
+- **Bibliothèques IA** : `transformers`, `torch`, `tensorflow` (pour le modèle de traitement du langage naturel)
+- **Gestion des dialogues** : `nltk` pour les interactions conversationnelles
 
 ## Contribuer
 

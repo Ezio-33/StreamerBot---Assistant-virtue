@@ -56,6 +56,12 @@ section {
   font-weight: bold;
 }
 
+#intro img {
+  max-width: 100%;
+  height: auto;
+  max-height: 150px; /* Ajuster la hauteur maximale de l'image */
+}
+
 #intro h1 {
   font-size: 36px;
   margin-bottom: 20px;

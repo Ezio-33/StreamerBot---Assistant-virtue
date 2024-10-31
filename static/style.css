@@ -21,7 +21,7 @@ body {
 }
 
 .chat-header {
-  background-color: #009688;
+  background-color: #4c2e88;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -52,13 +52,13 @@ body {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #009688;
+  background-color: #4c2e88;
   color: #fff;
   cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #00796b;
+  background-color: #ab85ec;
 }
 
 .userText,
@@ -84,7 +84,7 @@ body {
 }
 
 .userText span {
-  background-color: #009688;
+  background-color: #4c2e88;
   color: #fff;
 }
 

@@ -1,0 +1,155 @@
+/* Styles généraux */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: #333;
+}
+
+a {
+  color: #ab85ec;
+  text-decoration: none;
+}
+
+/* En-tête et navigation */
+header {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+/* Sections principales */
+section {
+  padding: 50px;
+}
+
+#intro {
+  background-color: #ab85ec;
+  color: #fff;
+  text-align: center;
+}
+
+.logo-placeholder {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ab85ec;
+  font-weight: bold;
+}
+
+#intro h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#intro p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.button {
+  background-color: #fff;
+  border: 2px solid #ab85ec;
+  border-radius: 5px;
+  color: #321279;
+  display: inline-block;
+  font-size: 16px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin: 10px;
+}
+
+.button:hover {
+  background-color: #e7ddfd;
+  color: #fff;
+}
+
+#features {
+  background-color: #f8f9fa;
+}
+
+.feature {
+  display: inline-block;
+  margin-right: 20px;
+  text-align: center;
+  vertical-align: top;
+  width: 30%;
+}
+
+.feature-image-placeholder {
+  width: 200px;
+  height: 200px;
+  background-color: #e7ddfd;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ab85ec;
+  font-weight: bold;
+}
+
+#demo {
+  background-color: #fff;
+  text-align: center;
+}
+
+.video-placeholder {
+  width: 100%;
+  height: 400px;
+  background-color: #e7ddfd;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ab85ec;
+  font-weight: bold;
+}
+
+#about {
+  background-color: #f8f9fa;
+}
+
+#about h3 {
+  margin-top: 30px;
+}
+
+#about ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#about ul li {
+  margin-bottom: 10px;
+}
+
+#team {
+  background-color: #fff;
+}
+
+/* Pied de page */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}

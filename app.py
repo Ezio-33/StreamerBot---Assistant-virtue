@@ -3,14 +3,15 @@ import random
 import numpy as np
 import pickle
 import json
-from flask import Flask, render_template, request
 import nltk
+import torch
+from flask import Flask, render_template, request
 from tensorflow.keras.models import load_model
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import sent_tokenize
 from transformers import CamembertTokenizer, CamembertForCausalLM
-import subprocess
 from datetime import datetime
+from threading import Thread
 
 lemmatizer = WordNetLemmatizer()
 nltk.download('punkt', quiet=True)
@@ -26,7 +27,10 @@ classes = pickle.load(open(os.path.join(BASE_DIR, "classes.pkl"), "rb"))
 
 # Initialiser le tokenizer et le modèle de langage avancé
 tokenizer = CamembertTokenizer.from_pretrained("camembert-base")
-nlp_model = CamembertForCausalLM.from_pretrained("camembert-base")
+tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+nlp_model = CamembertForCausalLM.from_pretrained("camembert-base", is_decoder=True)
+nlp_model.resize_token_embeddings(len(tokenizer))
+nlp_model.eval()  # Mettre le modèle en mode évaluation
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -63,15 +67,19 @@ def chatbot_response():
 def feedback():
     question = request.form["question"]
     expected_response = request.form["expected"]
-    save_feedback(question, expected_response)
+    Thread(target=save_feedback, args=(question, expected_response)).start()
     return "Feedback reçu et sauvegardé."
 
 @app.route("/quit", methods=["POST"])
 def quit():
-    # Réentraîner le modèle avec les nouvelles données
+    Thread(target=update_and_quit).start()
+    return "Modèle mis à jour et application fermée."
+
+def update_and_quit():
+    import subprocess
     subprocess.Popen(["python", os.path.join(BASE_DIR, "update_model.py")])
     subprocess.Popen(["python", os.path.join(BASE_DIR, "train.py")])
-    return "Modèle mis à jour et application fermée."
+    os._exit(0)
 
 def save_feedback(question, expected_response):
     feedback_path = os.path.join(BASE_DIR, "data", "user_feedback.json")
@@ -124,15 +132,28 @@ def get_response(ints, name=None):
     return "Désolé, je ne vous ai pas compris."
 
 def generate_contextual_response(response, user_input):
-    prompt = f"Bot: {response}"
-    inputs = tokenizer(prompt, return_tensors="pt")
-    outputs = nlp_model.generate(**inputs, max_length=100, num_return_sequences=1, pad_token_id=tokenizer.eos_token_id)
-    generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    generated_text = generated_text.replace("Bot:", "").strip()
-
-    if not generated_text or len(generated_text.split()) < 3 or not generated_text[-1] in ".!?":
+    try:
+        prompt = f"Utilisateur: {user_input}\nBot: {response}"
+        with torch.no_grad():
+            inputs = tokenizer(prompt, return_tensors="pt", padding=True)
+            outputs = nlp_model.generate(
+                inputs.input_ids,
+                attention_mask=inputs.attention_mask,
+                max_length=150,
+                max_new_tokens=100,
+                num_return_sequences=1,
+                no_repeat_ngram_size=2,
+                early_stopping=True,
+                num_beams=3,  # Réduit de 5 à 3 pour accélérer
+            )
+        generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+        generated_text = generated_text.split("Bot:")[-1].strip()
+        if not generated_text or len(generated_text.split()) < 3 or generated_text[-1] not in ".!?":
+            return response
+        return generated_text
+    except Exception as e:
+        print(f"Erreur dans generate_contextual_response: {e}")
         return response
-    return generated_text
 
 if __name__ == "__main__":
     app.run()

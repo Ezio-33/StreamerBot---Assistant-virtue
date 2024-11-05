@@ -72,10 +72,11 @@
       ],
       "responses": [
         "Heureux d'aider !",
+        "À tout moment !",
         "Je vous en prie.",
         "Avec plaisir !",
         "Content que cela vous soit utile !",
-        "Avec plaisir. N'hésitez pas si vous avez d'autres questions.",
+        "N'hésitez pas si vous avez d'autres questions.",
         "Ravi de pouvoir vous aider.",
         "Je suis là pour ça !",
         "Merci à vous pour votre confiance.",
@@ -115,7 +116,7 @@
         "Je m'appelle Julie un programme d'intelligence artificielle conçu pour vous aider.",
         "Je m'appelle Julie, votre assistant virtuel personnalisé.",
         "Je suis Julie, un programme conçu pour vous assister.",
-        "Je m'appelle Julie un assistant virtuel prêt à vous aider.",
+        "Je suis Julie un assistant virtuel prêt à vous aider avec vos besoins.",
         "Je suis Julie, un programme d'intelligence artificielle dédié à vous fournir de l'aide et des informations."
       ],
       "context": [""]

@@ -26,7 +26,9 @@
         "Bonjour, que puis-je faire pour vous aujourd'hui ? Des questions sur AI-licia ?",
         "Salut, avez-vous besoin d'aide avec quelque chose concernant AI-licia ?"
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "goodbye",
@@ -53,7 +55,9 @@
         "Merci pour votre visite, à la prochaine !",
         "Au revoir, et bonne journée !"
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "thanks",
@@ -72,20 +76,25 @@
       ],
       "responses": [
         "Heureux d'aider !",
+        "À tout moment !",
         "Je vous en prie.",
         "Avec plaisir !",
         "Content que cela vous soit utile !",
-        "Avec plaisir. N'hésitez pas si vous avez d'autres questions.",
+        "N'hésitez pas si vous avez d'autres questions.",
         "Ravi de pouvoir vous aider.",
         "Je suis là pour ça !",
         "Merci à vous pour votre confiance.",
         "Si vous avez besoin de plus d'aide, je suis là."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "noanswer",
-      "patterns": [""],
+      "patterns": [
+        ""
+      ],
       "responses": [
         "Désolé, je ne vous ai pas compris.",
         "Pouvez-vous reformuler votre question ?",
@@ -98,43 +107,60 @@
         "Pouvez-vous donner plus de détails ?",
         "Je ne suis pas sûr de ce que vous demandez, pouvez-vous reformuler ?"
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "name1",
       "patterns": [
         "quel est ton nom",
         "qui es tu",
+        "qu'est-ce que tu es",
         "comment t'appelles tu",
         "comment vous appelez vous",
         "peux tu te présenter",
+        "es tu un programme d'intelligence artificielle",
         "tu est quoi",
-        "comment tu t'appel"
+        "comment tu t'appel",
+
       ],
       "responses": [
-        "Je m'appelle Julie un programme d'intelligence artificielle conçu pour vous aider.",
+        "Je suis un chatbot, ici pour vous aider.",
+        "Je suis un assistant virtuel, ravi de vous rencontrer !",
+        "Je suis un programme d'intelligence artificielle conçu pour vous aider.",
         "Je m'appelle Julie, votre assistant virtuel personnalisé.",
         "Je suis Julie, un programme conçu pour vous assister.",
-        "Je m'appelle Julie un assistant virtuel prêt à vous aider.",
-        "Je suis Julie, un programme d'intelligence artificielle dédié à vous fournir de l'aide et des informations."
+        "Je suis un assistant virtuel prêt à vous aider avec vos besoins.",
+        "Je suis un robot conversationnel, ici pour répondre à vos questions.",
+        "Je suis Julie, un programme d'intelligence artificielle dédié à vous fournir de l'aide et des informations.",
+        "L'Intelligence Artificielle est la branche de l'ingénierie et de la science consacrée à la construction de machines qui pensent."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
-    {
-      "tag": "Ai_licia",
-      "patterns": [
-        "Qu'est ce que ai_licia?",
-        "Qu'est-ce que ailicia ?",
-        "Qu'est-ce que ai_licia ?"
-      ],
-      "responses": [
-        "ai_licia est le premier compagnon IA pour les streameurs Twitch ! ai_licia a été créée par des streameurs sur Twitch afin de t'aider à connecter avec ta communauté et à développer ton audience de manière durable. ai_licia garde ton chat actif pendant que tu te concentres sur ton stream. Ne rate jamais une occasion d'interagir avec les spectateurs et de faire grandir ta chaîne ! Tu peux personnaliser ai_licia pour qu'elle colle parfaitement à l'ambiance de ton stream, car elle est hautement personnalisable dans sa façon de se comporter et d'interagir avec ton chat."
-      ],
-      "context": [""]
+    "tag": "Ai_licia",
+    "patterns": [
+          "Qu'est ce que ai_licia?",
+      "Qu'est-ce que ailicia ?",
+      "Qu'est-ce que ai_licia ?"
+    ],
+    "responses": [
+  
+      "ai_licia est le premier compagnon IA pour les streameurs Twitch ! ai_licia a été créée par des streameurs sur Twitch afin de t'aider à connecter avec ta communauté et à développer ton audience de manière durable. ai_licia garde ton chat actif pendant que tu te concentres sur ton stream. Ne rate jamais une occasion d'interagir avec les spectateurs et de faire grandir ta chaîne ! Tu peux personnaliser ai_licia pour qu'elle colle parfaitement à l'ambiance de ton stream, car elle est hautement personnalisable dans sa façon de se comporter et d'interagir avec ton chat.",
+    ],
+    "context": [
+      ""
+    ]
     },
     {
       "tag": "name",
-      "patterns": ["je m'appelle ", "je suis ", "mon nom est "],
+      "patterns": [
+        "je m'appelle ",
+        "je suis ",
+        "mon nom est "
+      ],
       "responses": [
         "Enchanté de vous rencontrer {n}. Comment puis-je vous aider {n} ?",
         "Bonjour {n}, comment puis-je vous assister aujourd'hui ?",
@@ -142,7 +168,9 @@
         "Salut {n}, comment puis-je vous aider avec AI-licia ?",
         "Bonjour {n}, avez-vous des questions sur AI-licia ?"
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "age",
@@ -168,25 +196,37 @@
         "Mon objectif est de vous aider, peu importe depuis combien de temps j'existe.",
         "Je suis opérationnel depuis un certain temps, mais je suis constamment amélioré pour mieux vous servir."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "creator",
-      "patterns": ["qui t'a créé", "qui est ton créateur", "qui t'a programmé"],
+      "patterns": [
+        "qui t'a créé",
+        "qui est ton créateur",
+        "qui t'a programmé"
+      ],
       "responses": [
         "J'ai été créé par Samuel un développeurs passionnés qui stream sur twitch sous le pseudo Ezio_33.",
         "Je suis le produit du travail acharné de Samuel un passionné d'intelligence artificielle.",
         "Mon créateur est Samuel un développeur qui stream sur twitch sous le pseudo Ezio_33 tout les samedi."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "Parler",
-      "patterns": ["parler avec toi"],
+      "patterns": [
+        "parler avec toi"
+      ],
       "responses": [
         "Je serais heureux de parler avec vous. Par contre mes réponses sont limitées par l’entraînement que j'ai eu."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "favorite_color",
@@ -200,7 +240,9 @@
         "Je n'ai pas de préférences, mais le bleu est une belle couleur, n'est-ce pas ?",
         "Les couleurs sont toutes belles à leur manière, mais le bleu est souvent apprécié."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "hobbies",
@@ -214,7 +256,9 @@
         "Mon passe-temps préféré est de répondre à vos questions.",
         "Je passe mon temps à améliorer mes capacités pour mieux vous aider."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "languages",
@@ -228,7 +272,9 @@
         "Je suis programmé pour comprendre le français, mais je peux être configuré pour d'autres langues.",
         "Actuellement, je parle français, mais je peux être mis à jour pour comprendre d'autres langues."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "stream_setup",
@@ -241,7 +287,9 @@
         "Pour configurer votre stream, vous devez d'abord installer un logiciel de streaming comme OBS Studio. Ensuite, configurez votre clé de stream depuis votre plateforme de streaming préférée et ajustez les paramètres vidéo et audio selon vos besoins.",
         "Pour démarrer un stream, vous aurez besoin d'un logiciel de streaming comme OBS Studio. Configurez votre clé de stream et ajustez les paramètres vidéo et audio. Ensuite, cliquez sur 'Démarrer le stream'."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "stream_quality",
@@ -254,7 +302,9 @@
         "Pour améliorer la qualité de votre stream, assurez-vous d'avoir une connexion Internet stable et rapide. Utilisez une résolution et un débit binaire appropriés pour votre connexion. Assurez-vous également que votre matériel (caméra, microphone, etc.) est de bonne qualité.",
         "Une mauvaise qualité de stream peut être due à une connexion Internet lente, des paramètres de résolution ou de débit binaire incorrects, ou un matériel de mauvaise qualité. Vérifiez ces éléments pour améliorer votre stream."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "engage_audience",
@@ -266,7 +316,9 @@
         "Pour engager votre audience, interagissez régulièrement avec vos spectateurs via le chat, organisez des sessions de questions-réponses, et utilisez des alertes et des overlays interactifs. Vous pouvez également organiser des concours et des giveaways.",
         "Rendre votre stream plus interactif peut se faire en utilisant des plugins et des bots pour gérer les interactions, en répondant aux questions des spectateurs en temps réel, et en organisant des événements spéciaux comme des concours ou des collaborations avec d'autres streamers."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "monetize_stream",
@@ -279,7 +331,9 @@
         "Pour monétiser votre stream, vous pouvez utiliser des plateformes comme Twitch ou YouTube qui offrent des options de monétisation comme les abonnements, les dons, et les publicités. Vous pouvez également obtenir des sponsors ou vendre des produits dérivés.",
         "Gagner de l'argent avec le streaming peut se faire via les abonnements, les dons, les publicités, les sponsors, et la vente de produits dérivés. Assurez-vous de créer un contenu de qualité et d'engager votre audience pour maximiser vos revenus."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "stream_tools",
@@ -292,7 +346,9 @@
         "Les outils populaires pour le streaming incluent OBS Studio, Streamlabs OBS, et XSplit. Pour l'équipement, vous aurez besoin d'une bonne caméra, d'un microphone de qualité, et d'une connexion Internet rapide.",
         "Les meilleurs logiciels de streaming sont OBS Studio, Streamlabs OBS, et XSplit. En termes d'équipement, une caméra HD, un microphone de qualité, et une connexion Internet stable sont essentiels."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "stream_troubleshoot",
@@ -305,7 +361,9 @@
         "Pour résoudre les problèmes de streaming, vérifiez votre connexion Internet, assurez-vous que votre matériel fonctionne correctement, et ajustez les paramètres de votre logiciel de streaming. Vous pouvez également consulter les forums et les guides en ligne pour des solutions spécifiques.",
         "Le lag dans votre stream peut être causé par une connexion Internet lente, des paramètres de résolution ou de débit binaire incorrects, ou un matériel de mauvaise qualité. Essayez de réduire la résolution ou le débit binaire, et assurez-vous que votre connexion Internet est stable."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "stream_schedule",
@@ -318,7 +376,9 @@
         "Pour planifier votre stream, choisissez des horaires réguliers qui conviennent à votre audience cible. Utilisez des outils de planification comme Google Calendar pour organiser vos sessions de streaming.",
         "Le meilleur moment pour streamer dépend de votre audience cible. Essayez de streamer pendant les heures où votre audience est la plus active. Utilisez des outils d'analyse pour déterminer les meilleurs moments pour streamer."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "stream_promotion",
@@ -331,44 +391,60 @@
         "Pour promouvoir votre stream, utilisez les réseaux sociaux, collaborez avec d'autres streamers, et engagez votre audience avec du contenu de qualité. Vous pouvez également utiliser des plateformes de promotion de stream et des forums pour attirer plus de spectateurs.",
         "Attirer plus de spectateurs à votre stream peut se faire en utilisant les réseaux sociaux, en collaborant avec d'autres streamers, et en engageant votre audience avec du contenu interactif et de qualité."
       ],
-      "context": [""]
+      "context": [
+        ""
+      ]
     },
     {
       "tag": "bonjour_comment_vous_appeler_v",
-      "patterns": ["Bonjour comment vous appeler vous ?"],
-      "responses": ["Je m'appelle Julie, votre assistant virtuel personnalisé."]
+      "patterns": [
+        "Bonjour comment vous appeler vous ?"
+      ],
+      "responses": [
+        "Je m'appelle Julie, votre assistant virtuel personnalisé."
+      ]
     },
     {
       "tag": "comment_tu_peux_m'aider_?",
-      "patterns": ["comment_tu_peux_m'aider_?"],
+      "patterns": [
+        "comment_tu_peux_m'aider_?"
+      ],
       "responses": [
         "Je peux vous fournir des informations sur la configuration et l'utilisation d'Ailicia. Que voulez-vous savoir ?"
       ]
     },
     {
       "tag": "comment_obtenir_ai_licia_?",
-      "patterns": ["Comment Obtenir ai_licia ?"],
+      "patterns": [
+        "Comment Obtenir ai_licia ?"
+      ],
       "responses": [
         "Très simple ! Rends-toi sur https://streamer-dashboard.ailicia.live/signup?via=ref-ezio_33, choisis ton abonnement et en quelques clics, tu devrais être prêt à démarrer ! En plus tu démarre avec -50% le premier mois."
       ]
     },
     {
       "tag": "comment_savoir_si_ai_licia_fon",
-      "patterns": ["Comment savoir si ai_licia fonctionnerait dans mon stream"],
+      "patterns": [
+        "Comment savoir si ai_licia fonctionnerait dans mon stream"
+      ],
       "responses": [
         "Jusqu'à présent, ai_licia a été utilisée dans plus de 8000 streams, couvrant des streams de musique live, des streams de DJ, des streams de jeux vidéo et même des streams de dodgeball. Tu peux aussi demander directement à ai_licia comment elle peut t'aider dans son stream en direct 24h/24, 7j/7, sur https://www.twitch.tv/ai_licia"
       ]
     },
     {
       "tag": "puis_je_tester_ai_licia_?",
-      "patterns": ["Puis je tester ai_licia ?"],
+      "patterns": [
+        "Puis je tester ai_licia ?"
+      ],
       "responses": [
         "Bien sûr ! Tu peux avoir un premier aperçu de ai_licia en discutant directement avec elle dans son stream en direct 24h/24, 7j/7, sur https://www.twitch.tv/ai_licia. Si tu veux l'essayer dans ton propre stream, je te recommmande de passer par se lien pour obtenir -50% de réduction sur ton premier mois: https://streamer-dashboard.ailicia.live/signup?via=ref-ezio_33"
       ]
     },
     {
       "tag": "ai_licia_est_elle_uniquement_p",
-      "patterns": ["ai_licia est elle uniquement pour Twitch ?"],
+      "patterns": [
+        "ai_licia est elle uniquement pour Twitch ?"
+      ],
       "responses": [
         "Pour le moment oui, mais nous prévoyons de la lancer sur Discord plus tard en 2024, alors reste à l'écoute ! Nous envisageons également de nous étendre à d'autres plateformes de streaming."
       ]
@@ -384,7 +460,9 @@
     },
     {
       "tag": "comment_tirer_le_meilleur_part",
-      "patterns": ["Comment tirer le meilleur parti de ai_licia ?"],
+      "patterns": [
+        "Comment tirer le meilleur parti de ai_licia ?"
+      ],
       "responses": [
         "Nous avons rédigé un article de blog pour t'aider à démarrer et à tirer le meilleur parti de ai_licia : https://www.novasquare.io/post/making-the-most-out-of-ai_licia"
       ]
@@ -400,21 +478,27 @@
     },
     {
       "tag": "j'ai_besoin_d'aide_pour_config",
-      "patterns": ["j'ai besoin d'aide pour configurer AI_licia"],
+      "patterns": [
+        "j'ai besoin d'aide pour configurer AI_licia"
+      ],
       "responses": [
         "Si vous avez besoin d'aide pour configurer AI-licia, je peux vous guider à travers les étapes nécessaires. Que voulez-vous faire ?"
       ]
     },
     {
       "tag": "peux_tu_ressentir_des_émotions",
-      "patterns": ["peux tu ressentir des émotions"],
+      "patterns": [
+        "peux tu ressentir des émotions"
+      ],
       "responses": [
         "Je suis programmé pour comprendre et répondre aux émotions humaines, mais je ne les ressens pas comme un humain."
       ]
     },
     {
       "tag": "es_tu_sage",
-      "patterns": ["es tu sage"],
+      "patterns": [
+        "es tu sage"
+      ],
       "responses": [
         "La sagesse implique une compréhension profonde et une expérience que je n'ai pas."
       ]

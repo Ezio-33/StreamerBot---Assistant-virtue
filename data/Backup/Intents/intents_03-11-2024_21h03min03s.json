@@ -1,34 +1,6 @@
 {
   "intents": [
     {
-      "tag": "greetings",
-      "patterns": [
-        "salut",
-        "bonjour",
-        "coucou",
-        "yo",
-        "quoi de neuf",
-        "hey",
-        "hola",
-        "salutations",
-        "bonsoir",
-        "hello"
-      ],
-      "responses": [
-        "Bonjour, merci de vous être connecté ! Comment puis-je vous aider aujourd'hui ?",
-        "Salut, comment puis-je vous assister avec AI-licia aujourd'hui ?",
-        "Hey ! Comment puis-je vous aider avec la configuration ou l'utilisation d'AI-licia ?",
-        "Bonjour, comment ça va ? Besoin d'aide avec AI-licia ?",
-        "Salut, quoi de neuf ? Avez-vous des questions sur AI-licia ?",
-        "Hello, comment puis-je vous assister aujourd'hui avec AI-licia ?",
-        "Bonjour, ravi de vous voir ! Comment puis-je vous aider avec AI-licia ?",
-        "Hey, comment puis-je rendre votre journée meilleure avec AI-licia ?",
-        "Bonjour, que puis-je faire pour vous aujourd'hui ? Des questions sur AI-licia ?",
-        "Salut, avez-vous besoin d'aide avec quelque chose concernant AI-licia ?"
-      ],
-      "context": [""]
-    },
-    {
       "tag": "goodbye",
       "patterns": [
         "au revoir",
@@ -56,34 +28,6 @@
       "context": [""]
     },
     {
-      "tag": "thanks",
-      "patterns": [
-        "merci",
-        "d'accord",
-        "merci beaucoup",
-        "c'est utile",
-        "super, merci",
-        "merci de m'avoir aidé",
-        "génial",
-        "je vous remercie",
-        "merci pour votre aide",
-        "merci pour l'information",
-        "merci pour les conseils"
-      ],
-      "responses": [
-        "Heureux d'aider !",
-        "Je vous en prie.",
-        "Avec plaisir !",
-        "Content que cela vous soit utile !",
-        "Avec plaisir. N'hésitez pas si vous avez d'autres questions.",
-        "Ravi de pouvoir vous aider.",
-        "Je suis là pour ça !",
-        "Merci à vous pour votre confiance.",
-        "Si vous avez besoin de plus d'aide, je suis là."
-      ],
-      "context": [""]
-    },
-    {
       "tag": "noanswer",
       "patterns": [""],
       "responses": [
@@ -101,26 +45,6 @@
       "context": [""]
     },
     {
-      "tag": "name1",
-      "patterns": [
-        "quel est ton nom",
-        "qui es tu",
-        "comment t'appelles tu",
-        "comment vous appelez vous",
-        "peux tu te présenter",
-        "tu est quoi",
-        "comment tu t'appel"
-      ],
-      "responses": [
-        "Je m'appelle Julie un programme d'intelligence artificielle conçu pour vous aider.",
-        "Je m'appelle Julie, votre assistant virtuel personnalisé.",
-        "Je suis Julie, un programme conçu pour vous assister.",
-        "Je m'appelle Julie un assistant virtuel prêt à vous aider.",
-        "Je suis Julie, un programme d'intelligence artificielle dédié à vous fournir de l'aide et des informations."
-      ],
-      "context": [""]
-    },
-    {
       "tag": "Ai_licia",
       "patterns": [
         "Qu'est ce que ai_licia?",
@@ -132,18 +56,7 @@
       ],
       "context": [""]
     },
-    {
-      "tag": "name",
-      "patterns": ["je m'appelle ", "je suis ", "mon nom est "],
-      "responses": [
-        "Enchanté de vous rencontrer {n}. Comment puis-je vous aider {n} ?",
-        "Bonjour {n}, comment puis-je vous assister aujourd'hui ?",
-        "Ravi de vous rencontrer {n}. Que puis-je faire pour vous ?",
-        "Salut {n}, comment puis-je vous aider avec AI-licia ?",
-        "Bonjour {n}, avez-vous des questions sur AI-licia ?"
-      ],
-      "context": [""]
-    },
+
     {
       "tag": "age",
       "patterns": [
@@ -332,11 +245,6 @@
         "Attirer plus de spectateurs à votre stream peut se faire en utilisant les réseaux sociaux, en collaborant avec d'autres streamers, et en engageant votre audience avec du contenu interactif et de qualité."
       ],
       "context": [""]
-    },
-    {
-      "tag": "bonjour_comment_vous_appeler_v",
-      "patterns": ["Bonjour comment vous appeler vous ?"],
-      "responses": ["Je m'appelle Julie, votre assistant virtuel personnalisé."]
     },
     {
       "tag": "comment_tu_peux_m'aider_?",

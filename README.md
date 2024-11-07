@@ -20,7 +20,7 @@ Voici une vidéo de démonstration du StreamerBot en action :
 
 <p align="center">
   <a href="https://presentation-streamerbot.netlify.app/videos/Feedback.mp4" target="_blank" rel="noopener noreferrer">
-    <img src="https://presentation-streamerbot.netlify.app/img/streamerbot_int.png" alt="Démonstration du StreamerBot">
+    <img src="https://presentation-streamerbot.netlify.app/img/streamerbot_int.png" alt="Démonstration du StreamerBot" style="display: block; margin: auto;">
   </a>
 </p>
 

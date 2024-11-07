@@ -1,3 +1,7 @@
+<p align="center">
+   <img src="https://presentation-streamerbot.netlify.app/img/streamerbot_logo.png" alt="StreamerBot Logo">
+</p>
+
 # StreamerBot - Assistant virtuel pour Streamer Dashboard
 
 ## Introduction
@@ -14,7 +18,32 @@ StreamerBot est un assistant virtuel intelligent conçu pour optimiser l'expéri
 
 Voici une vidéo de démonstration du StreamerBot en action :
 
-[![Démonstration StreamerBot](https://presentation-streamerbot.netlify.app/videos/Feedback.mp4)](https://presentation-streamerbot.netlify.app/videos/Feedback.mp4)
+<!-- [![Démonstration StreamerBot](https://presentation-streamerbot.netlify.app/videos/Feedback.mp4)](https://presentation-streamerbot.netlify.app/videos/Feedback.mp4) -->
+
+```html>
+<button onclick="toggleVideo()">Afficher/Masquer la vidéo</button>
+
+<div id="videoContainer">
+  <video width="600" controls>
+    <source
+      src="https://presentation-streamerbot.netlify.app/videos/Feedback.mp4"
+      type="video/mp4"
+    />
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+</div>
+
+<script>
+  function toggleVideo() {
+    var videoContainer = document.getElementById("videoContainer");
+    if (videoContainer.style.display === "none") {
+      videoContainer.style.display = "block";
+    } else {
+      videoContainer.style.display = "none";
+    }
+  }
+</script>
+```
 
 ## Fonctionnalités
 
@@ -39,12 +68,203 @@ Voici une vidéo de démonstration du StreamerBot en action :
    ```
 
 3. **Configuration** :
-   - Ajustez les paramètres dans le fichier `.env`
-   - Modifiez `intents.json` pour personnaliser les interactions
+   - Ajustez les paramètres dans le fichier de configuration `.env` pour adapter le bot à vos besoins.
+   - L'installation ne nécessite pas de connexion Internet une fois les dépendances installées.
+
+## Personnalisations
+
+**Données d'entraînement** :
+
+- Le bot utilise des données locales pour ajuster ses réponses. Pour personnaliser les interactions, modifiez le fichier `intents.json`.
+
+Exemple:
+
+```json
+{
+  "tag": "greetings",
+  "patterns": ["bonjour"],
+  "responses": [
+    "Bonjour ! Comment puis-je vous aider avec la configuration ou l'utilisation d'AI-licia ?"
+  ],
+  "context": [""]
+}
+```
+
+Bien sûr ! Voici une explication détaillée pour aider les lecteurs à comprendre cette section du fichier
+
+README.md
+
+et à la personnaliser :
+
+### Explication de la section JSON
+
+Cette section du fichier
+
+README.md
+
+contient un exemple de configuration JSON pour un système de chatbot. Voici une explication des différents éléments :
+
+```json
+{
+  "tag": "greetings",
+  "patterns": ["bonjour"],
+  "responses": [
+    "Bonjour ! Comment puis-je vous aider avec la configuration ou l'utilisation d'AI-licia ?"
+  ],
+  "context": [""]
+}
+```
+
+- **tag** : Ce champ est une étiquette qui identifie la catégorie ou le type de message. Dans cet exemple, l'étiquette est "greetings" (salutations).
+
+- **patterns** : Ce champ contient une liste de motifs ou de phrases que le chatbot doit reconnaître. Ici, le motif est "bonjour". Lorsque l'utilisateur tape "bonjour", le chatbot reconnaît ce motif.
+
+- **responses** : Ce champ contient une liste de réponses que le chatbot peut donner lorsqu'il reconnaît un des motifs. Dans cet exemple, la réponse est "Bonjour ! Comment puis-je vous aider avec la configuration ou l'utilisation d'AI-licia ?".
+
+- **context** : Ce champ est utilisé pour définir le contexte dans lequel cette réponse est valide. Dans cet exemple, le contexte est vide, ce qui signifie que cette réponse est toujours valide.
+
+### Comment personnaliser cette section
+
+Pour personnaliser cette section, vous pouvez modifier les valeurs des champs selon vos besoins. Voici quelques exemples :
+
+1. **Changer l'étiquette (tag)** :
+
+   ```json
+   "tag": "farewell"
+   ```
+
+2. **Ajouter des motifs (patterns)** :
+
+   ```json
+   "patterns": [
+      "au revoir",
+      "à bientôt"
+   ]
+   ```
+
+3. **Ajouter des réponses (responses)** :
+
+   ```json
+   "responses": [
+      "Au revoir ! Passez une bonne journée !",
+      "À bientôt ! N'hésitez pas à revenir si vous avez d'autres questions."
+   ]
+   ```
+
+4. **Définir un contexte spécifique** :
+   ```json
+   "context": ["user_logged_in"]
+   ```
+
+### Exemple personnalisé
+
+Voici un exemple personnalisé pour un message d'adieu :
+
+```json
+{
+  "tag": "farewell",
+  "patterns": ["au revoir", "à bientôt"],
+  "responses": [
+    "Au revoir ! Passez une bonne journée !",
+    "À bientôt ! N'hésitez pas à revenir si vous avez d'autres questions."
+  ],
+  "context": ["user_logged_in"]
+}
+```
+
+Bien sûr ! Voici une explication détaillée pour aider les lecteurs à comprendre cette section du fichier
+
+README.md
+
+et à la personnaliser :
+
+### Explication de la section JSON
+
+Cette section du fichier
+
+README.md
+
+contient un exemple de configuration JSON pour un système de chatbot. Voici une explication des différents éléments :
+
+```json
+{
+  "tag": "greetings",
+  "patterns": ["bonjour"],
+  "responses": [
+    "Bonjour ! Comment puis-je vous aider avec la configuration ou l'utilisation d'AI-licia ?"
+  ],
+  "context": [""]
+}
+```
+
+- **tag** : Ce champ est une étiquette qui identifie la catégorie ou le type de message. Dans cet exemple, l'étiquette est "greetings" (salutations).
+
+- **patterns** : Ce champ contient une liste de motifs ou de phrases que le chatbot doit reconnaître. Ici, le motif est "bonjour". Lorsque l'utilisateur tape "bonjour", le chatbot reconnaît ce motif.
+
+- **responses** : Ce champ contient une liste de réponses que le chatbot peut donner lorsqu'il reconnaît un des motifs. Dans cet exemple, la réponse est "Bonjour ! Comment puis-je vous aider avec la configuration ou l'utilisation d'AI-licia ?".
+
+- **context** : Ce champ est utilisé pour définir le contexte dans lequel cette réponse est valide. Dans cet exemple, le contexte est vide, ce qui signifie que cette réponse est toujours valide.
+
+### Comment personnaliser cette section
+
+Pour personnaliser cette section, vous pouvez modifier les valeurs des champs selon vos besoins. Voici quelques exemples :
+
+1. **Changer l'étiquette (tag)** :
+
+   ```json
+   "tag": "farewell"
+   ```
+
+2. **Ajouter des motifs (patterns)** :
+
+   ```json
+   "patterns": [
+      "au revoir",
+      "à bientôt"
+   ]
+   ```
+
+3. **Ajouter des réponses (responses)** :
+
+   ```json
+   "responses": [
+      "Au revoir ! Passez une bonne journée !",
+      "À bientôt ! N'hésitez pas à revenir si vous avez d'autres questions."
+   ]
+   ```
+
+4. **Définir un contexte spécifique** :
+   ```json
+   "context": ["user_logged_in"]
+   ```
+
+### Exemple personnalisé
+
+Voici un exemple personnalisé pour un message d'adieu :
+
+```json
+{
+  "tag": "farewell",
+  "patterns": ["au revoir", "à bientôt"],
+  "responses": [
+    "Au revoir ! Passez une bonne journée !",
+    "À bientôt ! N'hésitez pas à revenir si vous avez d'autres questions."
+  ],
+  "context": ["user_logged_in"]
+}
+```
+
+- **tag** : Ce champ est une étiquette qui identifie la catégorie ou le type de message. Dans cet exemple, l'étiquette est "greetings" (salutations).
+
+- **patterns** : Ce champ contient une liste de motifs ou de phrases que le chatbot doit reconnaître. Ici, le motif est "bonjour". Lorsque l'utilisateur tape "bonjour", le chatbot reconnaît ce motif.
+
+- **responses** : Ce champ contient une liste de réponses que le chatbot peut donner lorsqu'il reconnaît un des motifs. Dans cet exemple, la réponse est "Bonjour ! Comment puis-je vous aider avec la configuration ou l'utilisation d'AI-licia ?".
+
+- **context** (par défaut vide) : Ce champ est utilisé pour définir le contexte dans lequel cette réponse est valide. Dans cet exemple, le contexte est vide, ce qui signifie que cette réponse est toujours valide.
 
 ## Utilisation
 
-1. Lancez le script d’entraînement :
+1. Lancez le script d’entraînement si c'est la premiere fois que vous utiliser le chatbot:
    ```bash
    python train.py
    ```
@@ -68,6 +288,12 @@ Voici une vidéo de démonstration du StreamerBot en action :
 - **Logiciel** :
   - Python 3.8+
   - OS : Windows/Linux/Mac
+
+## Technologies utilisées
+
+- **Langage** : Python
+- **Bibliothèques IA** : `transformers`, `torch`, `tensorflow` (pour le modèle de traitement du langage naturel)
+- **Gestion des dialogues** : `nltk` pour les interactions conversationnelles
 
 ## Projets connexes
 

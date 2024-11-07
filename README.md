@@ -18,9 +18,11 @@ StreamerBot est un assistant virtuel intelligent conçu pour optimiser l'expéri
 
 Voici une vidéo de démonstration du StreamerBot en action :
 
-<a href="https://presentation-streamerbot.netlify.app/videos/Feedback.mp4" target="_blank">
-  <img src="https://presentation-streamerbot.netlify.app/img/streamerbot_int.png" alt="Démonstration du StreamerBot">
-</a>
+<p align="center">
+  <a href="https://presentation-streamerbot.netlify.app/videos/Feedback.mp4" target="_blank" rel="noopener noreferrer">
+    <img src="https://presentation-streamerbot.netlify.app/img/streamerbot_int.png" alt="Démonstration du StreamerBot">
+  </a>
+</p>
 
 ## Fonctionnalités
 

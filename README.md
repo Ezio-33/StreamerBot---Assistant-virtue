@@ -1,69 +1,86 @@
 # StreamerBot - Assistant virtuel pour Streamer Dashboard
 
-## Description
+## Introduction
 
-**StreamerBot** est un assistant virtuel intelligent fonctionnant localement, conçu pour optimiser l'expérience des utilisateurs du site [Streamer Dashboard](https://streamer-dashboard.ailicia.live/signup?via=ref-ezio_33). Ce chatbot vise à fournir une interaction fluide et naturelle, sans besoin de connexion internet, et s'exécute sur des machines modestes (processeur Intel de 8ème génération, 8 Go de RAM DDR4, sans carte graphique).
+StreamerBot est un assistant virtuel intelligent conçu pour optimiser l'expérience des utilisateurs du site [Streamer Dashboard](https://streamer-dashboard.ailicia.live/signup?via=ref-ezio_33). Ce chatbot local offre une interaction fluide et naturelle, sans nécessiter de connexion internet, et fonctionne sur des configurations matérielles modestes.
+
+### Liens importants
+
+- [Site de présentation du projet](https://presentation-streamerbot.netlify.app)
+- [Profil LinkedIn de l'auteur](www.linkedin.com/in/samuel-verschueren)
+- [Article de blog final](https://www.linkedin.com/pulse/streamerbot-un-assistant-virtuel-intelligent-pour-des-verschueren-xub3e/?trackingId=1hJ4av66R4uFJ9VsSQuDbQ%3D%3D)
+
+## Démonstration
+
+Voici une vidéo de démonstration du StreamerBot en action :
+
+[![Démonstration StreamerBot](https://presentation-streamerbot.netlify.app/videos/Feedback.mp4)](https://presentation-streamerbot.netlify.app/videos/Feedback.mp4)
 
 ## Fonctionnalités
 
-- 💬 **Chatbot local** : Offre des réponses intelligentes en fonction des interactions avec les utilisateurs, sans connexion à Internet.
-- 🚀 **Optimisation de l'expérience utilisateur** : Prévus pour s'intégrer dans le futur au site Streamer Dashboard pour améliorer la fluidité de navigation et l'accès aux informations.
-- ⚙️ **Personnalisable** : Les réponses et le comportement du chatbot peuvent être ajustés pour mieux correspondre aux besoins spécifiques des streamers.
-- 🖥️ **Performance optimisée** : Fonctionne sur des configurations matérielles modérées sans nécessiter de GPU.
+- 💬 **Chatbot local** : Réponses intelligentes sans connexion Internet
+- ⚙️ **Personnalisable** : Ajustement des réponses selon les besoins
+- 🖥️ **Performance optimisée** : Fonctionne sur hardware modeste
 
 ## Installation
 
 1. **Cloner le dépôt** :
+
    ```bash
    git clone https://github.com/Ezio-33/StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard.git
    cd StreamerBot---Assistant-virtuel-pour-Streamer-Dashboard
    git checkout Dev
    ```
+
 2. **Installer les dépendances** :
-   Utilisez `pip` pour installer les dépendances nécessaires :
+
    ```bash
    pip install -r requirements.txt
    ```
+
 3. **Configuration** :
-   - Ajustez les paramètres dans le fichier de configuration `.env` pour adapter le bot à vos besoins.
-   - L'installation ne nécessite pas de connexion Internet une fois les dépendances installées.
+   - Ajustez les paramètres dans le fichier `.env`
+   - Modifiez `intents.json` pour personnaliser les interactions
 
-## Configuration
+## Utilisation
 
-**Données d'entraînement** :
+1. Lancez le script d’entraînement :
+   ```bash
+   python train.py
+   ```
+2. Lancez le script principal :
+   ```bash
+   python main.py
+   ```
+3. Interagissez avec le chatbot via l'interface console
 
-- Le bot utilise des données locales pour ajuster ses réponses. Pour personnaliser les interactions, modifiez le fichier `intents.json`.
+4. Pour quitté sans entraîner le model a la fin de la session faire:
+   ```bash
+   ctrl c
+   ```
 
 ## Prérequis
 
 - **Matériel** :
-  - Processeur Intel 8ème génération
+  - Processeur Intel 8ème génération ou équivalent
   - 8 Go de RAM DDR4
-  - Pas de carte graphique nécessaire
+  - Pas de GPU nécessaire
 - **Logiciel** :
-  - Python 3.8 ou supérieur
+  - Python 3.8+
   - OS : Windows/Linux/Mac
 
-## Technologies utilisées
+## Projets connexes
 
-- **Langage** : Python
-- **Bibliothèques IA** : `transformers`, `torch`, `tensorflow` (pour le modèle de traitement du langage naturel)
-- **Gestion des dialogues** : `nltk` pour les interactions conversationnelles
-
-## Contribuer
-
-Les contributions sont les bienvenues ! Pour proposer une nouvelle fonctionnalité ou rapporter un bug :
-
-1. Fork le projet.
-2. Crée une branche (`feature/nom-de-la-feature`).
-3. Committez vos modifications (`git commit -m 'Ajouter nouvelle fonctionnalité'`).
-4. Pushez vers la branche (`git push origin feature/nom-de-la-feature`).
-5. Ouvrez une Pull Request.
+- [Streamer Dashboard](https://streamer-dashboard.ailicia.live/signup?via=ref-ezio_33) : Plateforme de gestion pour streamers
 
 ## Licence
 
 Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
-## Crédits
+## Auteur
 
-Développé avec ❤️ par **Ezio-33** pour améliorer l'expérience des streamers et rendre leur gestion de contenu plus fluide et agréable.
+Développé avec ❤️ par **Ezio-33** (Samuel Verschueren)
+
+---
+
+Pour toute question ou suggestion, n'hésitez pas à ouvrir une issue ou à me contacter directement via [LinkedIn](www.linkedin.com/in/samuel-verschueren).

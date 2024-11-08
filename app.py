@@ -12,6 +12,7 @@ from nltk.tokenize import sent_tokenize
 from transformers import CamembertTokenizer, CamembertForCausalLM
 from datetime import datetime
 from threading import Thread
+import subprocess
 
 lemmatizer = WordNetLemmatizer()
 nltk.download('punkt', quiet=True)
@@ -76,9 +77,13 @@ def quit():
     return "Modèle mis à jour et application fermée."
 
 def update_and_quit():
-    import subprocess
-    subprocess.Popen(["python", os.path.join(BASE_DIR, "update_model.py")])
-    subprocess.Popen(["python", os.path.join(BASE_DIR, "train.py")])
+    feedback_path = os.path.join(BASE_DIR, "data", "user_feedback.json")
+    if os.path.exists(feedback_path):
+        with open(feedback_path, 'r', encoding='utf-8') as file:
+            feedback = json.load(file)
+        if feedback:
+            subprocess.run(["python", os.path.join(BASE_DIR, "update_model.py")])
+            subprocess.run(["python", os.path.join(BASE_DIR, "train.py")])
     os._exit(0)
 
 def save_feedback(question, expected_response):

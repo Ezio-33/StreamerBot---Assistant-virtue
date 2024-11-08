@@ -9,6 +9,11 @@ body {
   height: 100vh;
 }
 
+.logo img {
+  width: 50px;
+  height: auto;
+}
+
 .container {
   width: 400px;
   height: 600px;

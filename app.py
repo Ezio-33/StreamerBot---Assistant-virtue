@@ -14,9 +14,11 @@ from datetime import datetime
 from threading import Thread
 import subprocess
 
+# Initialiser le lemmatizer et télécharger les données nécessaires de nltk
 lemmatizer = WordNetLemmatizer()
 nltk.download('punkt', quiet=True)
 
+# Définir le répertoire de base
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Charger le modèle entraîné et les fichiers nécessaires
@@ -33,16 +35,19 @@ nlp_model = CamembertForCausalLM.from_pretrained("camembert-base", is_decoder=Tr
 nlp_model.resize_token_embeddings(len(tokenizer))
 nlp_model.eval()  # Mettre le modèle en mode évaluation
 
+# Initialiser l'application Flask
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
 # Mémoire de la conversation
 conversation_memory = []
 
+# Définir la route pour la page d'accueil
 @app.route("/")
 def home():
     return render_template("index.html")
 
+# Définir la route pour obtenir une réponse du chatbot
 @app.route("/get", methods=["POST"])
 def chatbot_response():
     msg = request.form["msg"]
@@ -64,6 +69,7 @@ def chatbot_response():
     conversation_memory.append({"user": msg, "bot": responses})
     return " ".join(responses)
 
+# Définir la route pour recevoir des retours d'utilisateur
 @app.route("/feedback", methods=["POST"])
 def feedback():
     question = request.form["question"]
@@ -71,11 +77,13 @@ def feedback():
     Thread(target=save_feedback, args=(question, expected_response)).start()
     return "Feedback reçu et sauvegardé."
 
+# Définir la route pour quitter l'application
 @app.route("/quit", methods=["POST"])
 def quit():
     Thread(target=update_and_quit).start()
     return "Modèle mis à jour et application fermée."
 
+# Fonction pour mettre à jour le modèle et quitter l'application
 def update_and_quit():
     feedback_path = os.path.join(BASE_DIR, "data", "user_feedback.json")
     if os.path.exists(feedback_path):
@@ -86,6 +94,7 @@ def update_and_quit():
             subprocess.run(["python", os.path.join(BASE_DIR, "train.py")])
     os._exit(0)
 
+# Fonction pour sauvegarder les retours d'utilisateur
 def save_feedback(question, expected_response):
     feedback_path = os.path.join(BASE_DIR, "data", "user_feedback.json")
     os.makedirs(os.path.dirname(feedback_path), exist_ok=True)
@@ -101,10 +110,12 @@ def save_feedback(question, expected_response):
     with open(feedback_path, 'w', encoding='utf-8') as file:
         json.dump(feedback, file, ensure_ascii=False, indent=2)
 
+# Fonction pour nettoyer une phrase
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
     return [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
 
+# Fonction pour créer un sac de mots à partir d'une phrase
 def bow(sentence, words, show_details=False):
     sentence_words = clean_up_sentence(sentence)
     bag = [0] * len(words)
@@ -116,6 +127,7 @@ def bow(sentence, words, show_details=False):
                     print(f"trouvé dans le sac : {w}")
     return np.array(bag)
 
+# Fonction pour prédire la classe d'une phrase
 def predict_class(sentence):
     p = bow(sentence, words, show_details=False)
     if len(p) != len(words):
@@ -126,6 +138,7 @@ def predict_class(sentence):
     results.sort(key=lambda x: x[1], reverse=True)
     return [{"intent": classes[r[0]], "probability": str(r[1])} for r in results]
 
+# Fonction pour obtenir une réponse en fonction de la classe prédite
 def get_response(ints, name=None):
     if not ints:
         return "Désolé, je ne vous ai pas compris."
@@ -136,6 +149,7 @@ def get_response(ints, name=None):
             return response.replace("{n}", name) if name else response
     return "Désolé, je ne vous ai pas compris."
 
+# Fonction pour générer une réponse contextuelle
 def generate_contextual_response(response, user_input):
     try:
         prompt = f"Utilisateur: {user_input}\nBot: {response}"
@@ -160,5 +174,6 @@ def generate_contextual_response(response, user_input):
         print(f"Erreur dans generate_contextual_response: {e}")
         return response
 
+# Démarrer l'application Flask
 if __name__ == "__main__":
     app.run()

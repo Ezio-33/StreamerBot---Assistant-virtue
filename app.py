@@ -145,11 +145,11 @@ def generate_contextual_response(response, user_input):
                 inputs.input_ids,
                 attention_mask=inputs.attention_mask,
                 max_length=150,
-                max_new_tokens=100,
+                max_new_tokens=80,
                 num_return_sequences=1,
                 no_repeat_ngram_size=2,
                 early_stopping=True,
-                num_beams=3,  # Réduit de 5 à 3 pour accélérer
+                num_beams=1,  # Réduit de 5 à 1 pour accélérer le temps de reponse
             )
         generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
         generated_text = generated_text.split("Bot:")[-1].strip()

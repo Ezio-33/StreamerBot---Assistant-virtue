@@ -92,3 +92,13 @@ body {
   background-color: #ef5350;
   color: #fff;
 }
+.botText span a {
+  color: #ffff8d; /* Jaune pâle */
+  text-decoration: underline;
+  font-weight: bold; /* Pour rendre le lien plus visible */
+}
+
+.botText span a:hover {
+  color: #ffffa8; /* Un jaune légèrement plus clair au survol */
+  text-decoration: none; /* Enlève le soulignement au survol pour un effet visuel */
+}

@@ -62,9 +62,9 @@ for intent in intents["intents"]:
         # Tokeniser chaque mot dans la phrase
         w = nltk.word_tokenize(pattern)
         words.extend(w)
-        # Ajouter au corpus
+        # Ajouter au corpus de documents
         documents.append((w, intent["tag"]))
-        # Ajouter à notre liste de classes
+        # Ajouter le tag à la liste des classes s'il n'est pas déjà présent
         if intent["tag"] not in classes:
             classes.append(intent["tag"])
 
@@ -109,15 +109,14 @@ for i in range(len(training)):
 train_x = np.array([item[0] for item in training])
 train_y = np.array([item[1] for item in training])
 
-# Création du modèle - 3 couches. Première couche 128 neurones, deuxième couche 64 neurones et troisième couche de sortie contient le nombre de neurones
-# égal au nombre d'intentions pour prédire l'intention de sortie avec softmax
+# Création du modèle - 3 couches
 model = Sequential()
 model.add(Input(shape=(len(train_x[0]),)))
-model.add(Dense(128, activation='relu'))
-model.add(Dropout(0.5))
-model.add(Dense(64, activation='relu'))
-model.add(Dropout(0.5))
-model.add(Dense(len(train_y[0]), activation='softmax'))
+model.add(Dense(128, activation='relu'))  # Première couche avec 128 neurones et activation ReLU
+model.add(Dropout(0.5))  # Ajout de dropout pour éviter le surapprentissage
+model.add(Dense(64, activation='relu'))  # Deuxième couche avec 64 neurones et activation ReLU
+model.add(Dropout(0.5))  # Ajout de dropout
+model.add(Dense(len(train_y[0]), activation='softmax'))  # Couche de sortie avec activation softmax
 
 # Définir le planificateur de taux d'apprentissage
 initial_learning_rate = 0.01
@@ -127,12 +126,13 @@ lr_schedule = ExponentialDecay(
     decay_rate=0.96,
     staircase=True)
 
-# Compilation du modèle. Définir la perte et l'optimiseur
+# Compilation du modèle
 sgd = SGD(learning_rate=lr_schedule, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
-# Entraînement et sauvegarde du modèle
+# Entraînement du modèle
 hist = model.fit(train_x, train_y, epochs=200, batch_size=5, verbose=1)
+# Sauvegarde du modèle entraîné
 model.save(model_path)
 
 print("Modèle créé")
@@ -159,5 +159,6 @@ if os.path.exists(classes_path):
     new_classes_path = os.path.join(classes_backup_dir, f"classes.pkl_{timestamp}")
     os.rename(classes_path, new_classes_path)
 
+# Sauvegarde des listes de mots et de classes
 pickle.dump(words, open(words_path, "wb"))
 pickle.dump(classes, open(classes_path, "wb"))

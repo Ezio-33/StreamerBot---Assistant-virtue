@@ -498,12 +498,10 @@
     {
       "tag": "test",
       "patterns": [
-        "test",
-        "test 2"
+        "test"
       ],
       "responses": [
-        "Je suis un test de fonctionnalité",
-        "Je suis le second test"
+        "Je suis un test de fonctionnalité"
       ]
     }
   ]

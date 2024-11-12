@@ -9,6 +9,18 @@
       href="{{ url_for('static', filename='style.css')}}"
     />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      .botText span a {
+        color: #ffff8d; /* Jaune pâle pour contraster avec le fond rouge #ef5350 */
+        text-decoration: underline;
+        font-weight: bold;
+      }
+
+      .botText span a:hover {
+        color: #ffffa8; /* Un jaune légèrement plus clair au survol */
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -56,6 +68,13 @@
     </div>
 
     <script>
+      function makeLinksClickable(text) {
+        var urlRegex = /(https?:\/\/[^\s]+)/g;
+        return text.replace(urlRegex, function (url) {
+          return '<a href="' + url + '" target="_blank">' + url + "</a>";
+        });
+      }
+
       $(document).ready(function () {
         $("form").on("submit", function (event) {
           var rawText = $("#text").val().trim();
@@ -75,8 +94,9 @@
             type: "POST",
             url: "/get",
           }).done(function (data) {
+            var processedData = makeLinksClickable(data);
             var botHtml =
-              '<div class="botText"><span>' + data + "</span></div>";
+              '<div class="botText"><span>' + processedData + "</span></div>";
             $("#chatbox").append($.parseHTML(botHtml));
             $(".chat-body").scrollTop($(".chat-body")[0].scrollHeight);
             $("#feedback").show();

@@ -138,6 +138,7 @@ def remove_item_from_tag(tag, item_to_remove, item_type):
     save_intents()
     print(Fore.GREEN + f"L'item '{item_to_remove}' a été supprimé du tag '{tag}'.")
 
+# Fonction pour sauvegarder les intents dans le fichier intents.json
 def save_intents():
     with open(intents_path, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=2)

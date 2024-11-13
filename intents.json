@@ -200,9 +200,9 @@
         "qui t'a programmé"
       ],
       "responses": [
-        "J'ai été créé par Samuel un développeurs passionnés qui stream sur twitch sous le pseudo Ezio_33.",
+        "J'ai été créé par Samuel un développeurs passionnés qui stream sur twitch sous le pseudo Ezio_33.https://www.twitch.tv/ezio_33",
         "Je suis le produit du travail acharné de Samuel un passionné d'intelligence artificielle.",
-        "Mon créateur est Samuel un développeur qui stream sur twitch sous le pseudo Ezio_33 tout les samedi."
+        "Mon créateur est Samuel un développeur qui stream sur twitch sous le pseudo Ezio_33 tout les samedi.https://www.twitch.tv/ezio_33"
       ],
       "context": [
         ""
@@ -411,7 +411,7 @@
         "Comment Obtenir ai_licia ?"
       ],
       "responses": [
-        "Très simple ! Rends-toi sur https://streamer-dashboard.ailicia.live/signup?via=ref-ezio_33, choisis ton abonnement et en quelques clics, tu devrais être prêt à démarrer ! En plus tu démarre avec -50% le premier mois."
+        "Très simple ! Rends-toi sur https://streamer-dashboard.ailicia.live/signup?via=ref-ezio_33 , choisis ton abonnement et en quelques clics, tu devrais être prêt à démarrer ! En plus tu démarre avec -50% le premier mois."
       ]
     },
     {
@@ -429,7 +429,7 @@
         "Puis je tester ai_licia ?"
       ],
       "responses": [
-        "Bien sûr ! Tu peux avoir un premier aperçu de ai_licia en discutant directement avec elle dans son stream en direct 24h/24, 7j/7, sur https://www.twitch.tv/ai_licia. Si tu veux l'essayer dans ton propre stream, je te recommmande de passer par se lien pour obtenir -50% de réduction sur ton premier mois: https://streamer-dashboard.ailicia.live/signup?via=ref-ezio_33"
+        "Bien sûr ! Tu peux avoir un premier aperçu de ai_licia en discutant directement avec elle dans son stream en direct 24h/24, 7j/7, sur https://www.twitch.tv/ai_licia . Si tu veux l'essayer dans ton propre stream, je te recommmande de passer par se lien pour obtenir -50% de réduction sur ton premier mois: https://streamer-dashboard.ailicia.live/signup?via=ref-ezio_33"
       ]
     },
     {
@@ -504,6 +504,105 @@
       "responses": [
         "Je suis un test de fonctionnalité",
         "Je suis le second test"
+      ]
+    },
+    {
+      "tag": "à_quoi_sert_la_section_\"tes_pe",
+      "patterns": [
+        "À quoi sert la section \"Tes Personnages\" dans AI_licia ?"
+      ],
+      "responses": [
+        "La section \"Tes Personnages\" https://streamer-dashboard.ailicia.live/fr/character/ vous permet de sauvegarder les paramètres que vous souhaitez, comme le contenu ou l'attitude d'AI_licia. Vous pouvez personnaliser votre expérience en fonction de vos préférences."
+      ]
+    },
+    {
+      "tag": "puis-je_donner_un_surnom_à_ai_",
+      "patterns": [
+        "Puis-je donner un surnom à AI_licia ?"
+      ],
+      "responses": [
+        "Oui, vous pouvez choisir un petit surnom pour AI_licia qui sera utilisé pour vous désigner dans le chat. Cela rendra l'interaction plus personnelle et amusante.Vous devez vous rendre dans les selection personnage https://streamer-dashboard.ailicia.live/fr/character/ tu selectionne la personnalité voulu puis tu clic sur l'avatar et la tu poura ajouter des surnom."
+      ]
+    },
+    {
+      "tag": "comment_puis-je_définir_la_per",
+      "patterns": [
+        "Comment puis-je définir la personnalité de base d'AI_licia ?"
+      ],
+      "responses": [
+        "Vous pouvez définir la personnalité de base d'AI_licia en choisissant des traits comme \"gentille\", \"réconfortante\", ou \"intelligente\". Ces paramètres influencent la manière dont elle interagit avec vous et votre communauté."
+      ]
+    },
+    {
+      "tag": "puis-je_personnaliser_le_compo",
+      "patterns": [
+        "Puis-je personnaliser le comportement d'AI_licia ?"
+      ],
+      "responses": [
+        "Absolument ! Vous avez le contrôle total sur le comportement d'AI_licia. Vous pouvez décider si elle doit être bavarde, silencieuse ou réagir uniquement lorsqu'on la mentionne."
+      ]
+    },
+    {
+      "tag": "quels_paramètres_d'interaction",
+      "patterns": [
+        "Quels paramètres d'interaction puis-je ajuster pour AI_licia ?"
+      ],
+      "responses": [
+        "Vous pouvez ajuster plusieurs paramètres comme la longueur des messages, la fréquence des interactions et même la vitesse à laquelle elle tape ses réponses pour un effet réaliste."
+      ]
+    },
+    {
+      "tag": "comment_puis-je_recommander_ai",
+      "patterns": [
+        "Comment puis-je recommander AI_licia à mes amis ?"
+      ],
+      "responses": [
+        "Vous pouvez recommander AI_licia à vos amis en partageant un code de parrainage disponible https://streamer-dashboard.ailicia.live/signup?via=ref-ezio_33  Cela leur permettra de découvrir l'IA et ses fonctionnalités avec -50% de reduction le premier mois."
+      ]
+    },
+    {
+      "tag": "puis-je_intégrer_ai_licia_à_me",
+      "patterns": [
+        "Puis-je intégrer AI_licia à mes outils de streaming ?"
+      ],
+      "responses": [
+        "Oui, AI_licia peut être intégrée à divers outils et logiciels de streaming comme StreamDeck, ce qui vous permet de gérer facilement ses interactions pendant vos streams."
+      ]
+    },
+    {
+      "tag": "que_puis-je_faire_dans_la_sect",
+      "patterns": [
+        "Que puis-je faire dans la section \"Mon compte\" ?"
+      ],
+      "responses": [
+        "La section \"Mon compte\" vous permet de gérer votre abonnement, de personnaliser votre présentation auprès d'AI_licia et de vous déconnecter si nécessaire."
+      ]
+    },
+    {
+      "tag": "que_trouve-t-on_dans_la_sectio",
+      "patterns": [
+        "Que trouve-t-on dans la section \"Communauté\" ?"
+      ],
+      "responses": [
+        "Dans la section \"Communauté\", vous trouverez des informations comme la roadmap du projet, des playlists, les réseaux sociaux et même une boutique en ligne pour soutenir le développement d'AI_licia."
+      ]
+    },
+    {
+      "tag": "comment_puis-je_être_informé_d",
+      "patterns": [
+        "Comment puis-je être informé des nouveautés sur AI_licia ?"
+      ],
+      "responses": [
+        "La section \"Nouveautés\" https://headway-widget.net/widgets/xd9Aj7# vous tient informé des derniers changements et mises à jour apportés à AI_licia, afin que vous soyez toujours au courant des nouvelles fonctionnalités."
+      ]
+    },
+    {
+      "tag": "mode_blanc/light/dark_sur_le_s",
+      "patterns": [
+        "mode Blanc/Light/Dark sur le site AI_licia ?"
+      ],
+      "responses": [
+        "Le mode Light/Dark permet de changer l'apparence du site en mode sombre ou clair. Le mode sombre peut aider à réduire la consommation d'énergie, un petit bonus écologique ! Et le mode clair preserve vos yeux."
       ]
     }
   ]

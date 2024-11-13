@@ -116,7 +116,7 @@ Explication de la section JSON:
 
 ## Licence
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+Ce projet est sous licence CC BY-NC. Voir le fichier [LICENSE](Licence.txt) pour plus de détails.
 
 ## Auteur
 

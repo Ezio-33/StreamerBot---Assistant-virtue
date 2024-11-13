@@ -89,10 +89,11 @@ Explication de la section JSON:
    ```
 3. Interagissez avec le chatbot via l'interface console
 
-4. Pour quitté sans entraîner le model a la fin de la session faire:
+4. Pour quitté sans entraîner le model apres un ajoute de feedback faire cette commande dans le terminal:
    ```bash
    ctrl c
    ```
+5. Pour quitter l'application il suffit de cliquer sur le bouton quitter.
 
 ## Prérequis
 

@@ -89,7 +89,7 @@ Explication de la section JSON:
    ```
 3. Interagissez avec le chatbot via l'interface console
 
-4. Pour quitté sans entraîner le model apres un ajoute de feedback faire cette commande dans le terminal:
+4. Pour quitté sans entraîner le model apres un ajout de feedback faire cette commande dans le terminal:
    ```bash
    ctrl c
    ```

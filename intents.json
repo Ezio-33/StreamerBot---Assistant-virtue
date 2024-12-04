@@ -604,6 +604,24 @@
       "responses": [
         "Le mode Light/Dark permet de changer l'apparence du site en mode sombre ou clair. Le mode sombre peut aider à réduire la consommation d'énergie, un petit bonus écologique ! Et le mode clair preserve vos yeux."
       ]
+    },
+    {
+      "tag": "compte_de_1_à_10",
+      "patterns": [
+        "compte de 1 à 10"
+      ],
+      "responses": [
+        "1, 2, 3, 4, 5, 6, 7, 8, 9, 10."
+      ]
+    },
+    {
+      "tag": "comment_crée_un_compte",
+      "patterns": [
+        "Comment crée un compte"
+      ],
+      "responses": [
+        "Pour se connecté il faut utiliser son compte twitch"
+      ]
     }
   ]
 }

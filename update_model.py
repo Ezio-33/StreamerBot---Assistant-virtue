@@ -24,7 +24,7 @@ nltk.download('omw-1.4', quiet=True)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INTENTS_PATH = os.path.join(BASE_DIR, 'intents.json')
 USER_FEEDBACK_PATH = os.path.join(BASE_DIR, 'data', 'user_feedback.json')
-BACKUP_DIR = os.path.join(BASE_DIR, 'data', 'Backup', 'Instants')
+BACKUP_DIR = os.path.join(BASE_DIR, 'data', 'Backup', 'Intents')
 
 # Fonction pour lemmatiser une phrase, retourne la phrase normalisée
 def lemmatize_sentence(sentence):
